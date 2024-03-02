@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 0</h1>
+    <p>Обчислити значення виразів
+        <br>
+        S1=a+12+b
+        <br>
+        S2 = &#8730;(a+b)/2a
+        <br>
+        S3=&#8731;(a+b)c
+        <br>
+        S4=sin⁡(a/-b)
+
+    </p>
+    <script>
+        //1. Вводимо необхідні дані:
+        let a = parseFloat(prompt('Введіть число а:'));
+        let b = parseFloat(prompt('Введіть число b:'));
+        let c = parseFloat(prompt('Введіть число c:'));
+
+
+        //2. Знаходимо результат:
+        let s1 = a + 12 + b;
+        let s2 = Math.sqrt((a + b) / (2 * a))
+        let s3 = Math.pow((a + b) * c, 1 / 3)
+        let s4 = Math.sin(a / (-b))
+
+        //3. Виводимо результат:
+        document.write(`При:
+        a=${a}, 
+        b=${b}, 
+        c=${c} <br>
+        S1 = ${s1} <br>
+        S2 = ${s2} <br>
+        S3 = ${s3} <br>
+        S4 = ${s4}`)
+
+
+    </script>
+</body>
+
+</html>
