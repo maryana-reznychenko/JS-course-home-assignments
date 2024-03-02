@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 1</h1>
+    <p>Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у формі таблиці
+    </p>
+    <script>
+        //1. Вводимо необхідні дані:
+        let firstNumber = parseFloat(prompt('Введіть перше число:', '0'))
+        let secondNumber = parseFloat(prompt('Введіть друге число:', '0'))
+
+        //2. Знаходимо результат:
+        let sum = firstNumber + secondNumber;
+        let product = firstNumber * secondNumber;
+        let part = firstNumber / secondNumber;
+
+        //3. Виводимо результат:
+
+        document.write('<table border="1">');
+        document.write('<tr><td>Перше число:</td><td>' + firstNumber + '</td></tr>');
+        document.write('<tr><td>Друге число:</td><td>' + secondNumber + '</td></tr>');
+        document.write('<tr><td>Сума</td><td>' + (sum.toFixed((3))) + '</td></tr>');
+        document.write('<tr><td>Добуток</td><td>' + (product.toFixed((3))) + '</td></tr>');
+        document.write('<tr><td>Частка</td><td>' + (part.toFixed((3))) + '</td></tr>');
+        document.write('</table>');
+
+    </script>
+</body>
+
+</html>

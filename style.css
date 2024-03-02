@@ -1,0 +1,9 @@
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

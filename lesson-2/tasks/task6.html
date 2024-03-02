@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо
+        та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+    </p>
+    <script>
+        //1. Вводимо необхідні дані:
+        let firstItem = (prompt("Введіть назву товару №1"));
+        let firstItemPrice = parseFloat(prompt('Яка ціна цього товару?'));
+        let firstItemQuantity = parseFloat(prompt('Яка кількість цього товару?'));
+
+        let secondItem = (prompt("Введіть назву товару №2"));
+        let secondItemPrice = parseFloat(prompt('Яка ціна цього товару?'));
+        let secondItemQuantity = parseFloat(prompt('Яка кількість цього товару?'));
+
+
+        let thirdItem = (prompt("Введіть назву товару №3"));
+        let thirdItemPrice = parseFloat(prompt('Яка ціна цього товару?'));
+        let thirdItemQuantity = parseFloat(prompt('Яка кількість цього товару?'));
+
+        let totalAmount;
+
+        //2. Знаходимо результат - виведення залишку хвилин в годині:
+        let firstTotalPrice = firstItemPrice * firstItemQuantity;
+        let secondTotalPrice = secondItemPrice * secondItemQuantity;
+        let thirdTotalPrice = thirdItemPrice * thirdItemQuantity;
+        totalAmount = firstItemPrice + secondTotalPrice + thirdTotalPrice;
+
+        //3. Виводимо результат:
+        document.write(`
+   <table style="border:2px solid salmon">
+    <tr>
+     <th colspan="2">Касовий чек</th>
+     </tr>
+     <tr>
+      <td colspan="2">${firstItem}</td>
+     </tr>
+     <tr> 
+      <td>к-ть: ${firstItemQuantity}</td>
+      <td>ціна: ${firstItemPrice} грн.</td>
+      <td>разом: ${firstTotalPrice} грн.</td>
+      </tr>
+      <tr>
+      <td colspan="2">${secondItem}</td>
+     </tr>
+     <tr> 
+      <td>к-ть: ${secondItemQuantity}</td>
+      <td>ціна: ${secondItemPrice} грн.</td>
+      <td>разом: ${secondTotalPrice} грн.</td>
+      </tr>
+      <tr>
+      <td colspan="2">${thirdItem}</td>
+     </tr>
+     <tr> 
+      <td>к-ть: ${thirdItemQuantity}</td>
+      <td>ціна: ${thirdItemPrice} грн.</td>
+      <td>разом: ${thirdTotalPrice} грн.</td>
+      </tr>
+   <tr>
+    <tr>
+    <th colspan="2">Всього:</th>
+    <td>${totalAmount} грн.</td>
+     </tr>
+    </tr>
+    </table>
+  `)
+
+
+
+    </script>
+</body>
+
+</html>
