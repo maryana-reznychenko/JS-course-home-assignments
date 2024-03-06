@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 6</h1>
+    <p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+
+    </p>
+    <script>
+        //1. Вводимо необхідні дані:
+        let dayNumber = parseInt(prompt('Enter a day number'));
+        let dayName;
+
+        //2. Знаходимо результат:
+        switch (dayNumber) {
+            case 1: dayName = "This is Monday"
+                break;
+            case 2: dayName = "This is Tuesday"
+                break;
+            case 3: dayName = "This is Wednesday"
+                break;
+            case 4: dayName = "This is Thursday"
+                break;
+            case 5: dayName = "This is Friday"
+                break;
+            case 6: dayName = "This is Saturday"
+                break;
+            case 7: dayName = "This is Sunday"
+
+            default: dayName = "You entered incorrect day number"
+                break;
+        }
+
+        //3. Виводимо результат:
+        document.write(dayName)
+
+
+
+    </script>
+</body>
+
+</html>

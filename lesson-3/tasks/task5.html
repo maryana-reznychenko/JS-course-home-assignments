@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 5</h1>
+    <p>З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль).
+        Вивести на екран назву транспортного засобу, яким він може керувати.
+    </p>
+    <script>
+        //1. Вводимо необхідні дані:
+        let driverLicenseCategory = prompt('Enter drivers category:')
+        let vehicle
+
+        //2. Знаходимо результат:
+        switch (driverLicenseCategory.toLocaleLowerCase()) {
+            case 'a': vehicle = "motorcycle"
+                break;
+            case 'b': vehicle = "passenger car"
+                break;
+            case 'c': vehicle = "lorry"
+                break;
+
+            default: vehicle = 'cycle'
+                break;
+        }
+
+        //3. Виводимо результат:
+        document.write(`With this category you can drive a ${vehicle}`)
+
+    </script>
+</body>
+
+</html>
