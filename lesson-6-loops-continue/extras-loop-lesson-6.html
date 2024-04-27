@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras to lesson 5 (loops)</title>
+</head>
+
+<body>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid salmon;
+            margin: 1em;
+        }
+    </style>
+
+    <script>
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        // DONE. Задача.11 Знайти суму 5 непарних ВИПАДКОВИХ чисел, що знаходяться між заданими користувачем числами.
+
+        // let firstUserNum = parseInt(prompt('Enter the first number: '))
+        // let secondUserNum = parseInt(prompt('Enter the second number: '))
+
+        // if (firstUserNum > secondUserNum) {
+        //     let temporary = firstUserNum
+        //     firstUserNum = secondUserNum
+        //     secondUserNum = temporary
+        // }
+
+        // let oddNumber = 0,
+        //     sum = 0
+        // while (oddNumber < 5) {
+        //     let randomNum = firstUserNum + Math.floor(Math.random() * (secondUserNum - firstUserNum + 1))
+
+        //     if (randomNum % 2 !== 0) {
+        //         sum += randomNum
+        //         oddNumber++ //кількість непарних збільшуємо на одиницю
+
+        //     }
+        // }
+        // document.write(`The summ of 5 odd numbers = ${sum}`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        // DONE. Задача.11.1 Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+
+        // let firstUserNum = parseInt(prompt('Enter the first number: '))
+        // let secondUserNum = parseInt(prompt('Enter the second number: '))
+        // if (firstUserNum > secondUserNum) {
+        //     let temporary = firstUserNum
+        //     firstUserNum = secondUserNum
+        //     secondUserNum = temporary
+        // }
+
+
+        // let oddNumber = 0;
+        // let oddSum = 0;
+
+        // let startNum; // Знаходимо Перше непарне число після firstUserNum
+        // if ((firstUserNum + 1) % 2 !== 0) // firstUserNum + 1 - означає "між заданим діапазоном", тобто діапазон невключаючи заданиі користувачем числа
+        //     startNum = firstUserNum + 1
+        // else startNum = firstUserNum + 2
+
+
+        // for (let num = startNum; num < secondUserNum; num += 2) {
+        //     oddSum += num;
+        //     oddNumber++;
+        //     if (oddNumber === 5) break
+        // }
+
+        // document.write(`Sum = ${oddSum}`)
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        // DONE. Користувач загадує число. Компютер задає питання поки не вгадає число користувача (використати confirm)
+
+        // let minUserNum = parseInt(prompt('Enter min number: '))
+        // let maxUserNum = parseInt(prompt('Enter max number, and think of one number in that range.'))
+        // let attemptNumber = 0;
+        // let isGuessed;
+
+        // do {
+        //     let computerNum = minUserNum + Math.floor(Math.random() * (maxUserNum - minUserNum + 1))
+        //     attemptNumber++
+        //     isGuessed = confirm(`Is your number ${computerNum}?`)
+        // } while (isGuessed === false);
+
+        // document.write(`The number were gueseed by ${attemptNumber} attempts`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Вивести 5 маркованих списків по 3 випадкових числа (1-100)
+
+        for (let listNum = 1; listNum <= 5; listNum++) {
+            document.write(`List # ${listNum} `)
+            document.write('<ul>')
+            for (let i = 0; i < 3; i++) {
+                let randomNum = 1 + Math.floor(Math.random() * 100)
+                document.write(`<li>${randomNum}</li>`)
+            }
+            document.write('</ul>')
+        }
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    </script>
+
+</body>
+
+</html>

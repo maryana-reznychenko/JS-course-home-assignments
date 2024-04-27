@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extras to lesson 5 (loops)</title>
+</head>
+
+<body>
+  <style>
+    div {
+      display: inline-block;
+      border: 2px solid salmon;
+      margin: 1em;
+    }
+  </style>
+  <script>
+    //------------------------------------------------------
+
+    //DONE. Поступово вводяться вартості 7 товарів із зазначенням номера товару. Знайти загальну вартість
+
+    // let totalPrice = 0
+    // for (let num = 1; num <= 7; num++) {
+    //     const price = parseFloat(prompt(`Введіть вартість ${num} товару`))
+    //     totalPrice += price
+    // }
+
+    // document.write(`Total price  = ${totalPrice}`)
+    //========================================
+
+    //DONE. З клавіатури поступово вводяться імена 5 учнів. Визначити скільки є імен Іван
+    //ПЛАН:
+    //кількість імен Іван (countIvan)спочатку = 0;
+    //повторити 5 разів: ввести імя учня, якщо імя === Ivan, то кількість імен Ivan збільшити на 1
+    //вивести кількість імен Ivan.
+
+    // const searchName = 'Ivan'
+
+    // let countIvan = 0;
+
+    // for (let i = 1; i <= 5; i++) {
+    //     let pupilName = prompt(`Pupil name ${i} is: `);
+    //     if (pupilName === searchName)
+    //         countIvan++;
+
+    // }
+    // document.write(`Іванів: ${countIvan}`)
+    //====================================================================
+
+    // DONE. З клавіатури поступово вводяться імена учнів. Визначити скільки є імен Іван
+
+    // const searchName = 'Ivan'
+    // let countIvan = 0;
+
+    // //коли щось невідомо, потрібно спитатись:
+    // let pupilNumber = parseInt(prompt('How many pupils are there?'))
+
+
+    // for (let i = 1; i <= pupilNumber; i++) {
+    //   let pupilName = prompt(`Pupil name ${i} is: `);
+    //   if (pupilName === searchName)
+    //     countIvan++;
+
+    // }
+    // document.write(`Іванів: ${countIvan}`)
+
+    //------------------------------------------------------
+
+    //DONE. Реалізувати за допомогою alert таймер відліку від 10 до 1
+    // for (let i = 10; i >= 1; i--) {
+    //   alert(i)
+    // }
+    //------------------------------------------------------
+
+    //DONE. Задача. 15 разів вивести слово "Hello"
+
+    // for (let index = 0; index < 15; index++) {
+    //   document.write('<span> Hello </span>')
+    // }
+
+    //------------------------------------------------------
+    //Задача. З клавіатури вводиться 5 пар цілих чисел. Якщо числа рівні, то вивести їх суму, інакше – добуток
+
+
+
+    
+    //------------------------------------------------------
+    //Задача. З клавіатури 6 разів генерується ціле число в межах від 1 до 10 і кожного разу дається можливість користувачу вгадати число.
+
+    //------------------------------------------------------
+    //Задача. Поступово вводяться вартості 7 товарів. Знайти загальну вартість
+
+    //------------------------------------------------------
+    //Задача. Поступово вводяться вартості 7 товарів із зазначенням номера товару. Знайти загальну вартість
+
+    //------------------------------------------------------
+
+    //DONE.  Вивести   0.1,  0.5.,  0.9,   0.13, ...... 4.1
+    // for (let num = 0.1; num <= 4.1; num += 0.4) {
+    //   document.write(`<div>${num.toFixed(1)}</div>`)
+    // }
+    //------------------------------------------------------
+    /*
+     */
+    //Задача. Вводиться прибуток магазину за 3 тижні
+    //   (для кожного тижня вводиться прибуток за робочі дні 1-5). Знайти загальну суму
+
+    //  загальна сума = 0
+    // для кожного тижня від 1 до 3{
+    //        для кожного дня у тижні від 1 до 5 {
+    //ввести прибуток і додати до загальної суми
+    //       }
+    // }
+
+    // document.write(`Total = ${total}`)
+
+    //-----------------------------------------------------
+
+    //DONE. Задача. Вивести номери місяців другого півріччя (номери місяців від 6 до 12)
+    // for (let monthNumber = 7; monthNumber <= 12; monthNumber++) {
+    //   document.write(`<div> Month: ${monthNumber}</div>`)
+
+    // }
+    //------------------------------------------------------
+
+
+    //DONE. Задача. Вивести суми сплаченого кредиту. Початковий внесок 5000грн, кінцевий 15000 грн, а щомісячний внесок 2000грн.
+    // for (let creditValue = 5000; creditValue <= 15000; creditValue += 2000) {
+    //   document.write(`<div> Credit payment: ${creditValue}</div>`)
+
+    // }
+
+
+    //------------------------------------------------------
+    //DONE. Приклад. «Тренажер додавання».
+    // Розробити програму для перевірки знань з додавання цілих чисел в межах від 1 до 3(перебрати усі можливі комбінації додавання цілих чисел
+    //(тобто перше число перебрати від 1 до 3 і для кожного першого числа перебрати числа від 1 до 5). Іншими словами:
+    //  1+1, 1+2, 1+3
+    // 2+1, 2+2, 2+3
+    // 3+1, 3+2, 3+3
+
+    //ПЛАН:
+    // перше число змінюється від 1 до 3 -> треба повторювати
+    //{
+    //Друге число змінюється від 1 до 3 -> треба повторювати
+    //{
+    //виводимо повідомлення “Чому дорівнює перше + друге число“
+    //вводимо відповідь користувача
+    //якщо відповідь = суммі чисел -> відповідь правильна “Ок“
+    //інакше -> “Помилка“
+    //}}
+    // for (let num1 = 1; num1 <= 3; num1++) {
+
+    //   for (let num2 = 1; num2 <= 3; num2++) {
+
+    //     let userAnswer = parseInt(prompt(`${num1}+${num2}=`))
+    //     if (userAnswer === num1 + num2) {
+    //       alert('Ok')
+    //     } else {
+    //       alert('Error')
+    //     }
+
+    //   }
+    // }
+
+
+    //------------------------------------------------------
+
+
+    // DONE.  Приклад*. «Тренажер множення». Розробити програму, яка випадковим чином (4 рази) генерує перше число в межах від 1 до 9, друге число від 1 до 9 і перевірити чи знає користувач, чому дорівнює результат їх множення. Підрахувати кількість правильних відповідей.
+    //let correctAnswerNum = 0;
+
+    //for (let i = 1; i <= 4; i++) {
+    //let num1 = 1 + Math.floor(Math.random() * 9);
+    //let num2 = 1 + Math.floor(Math.random() * 9);
+    //let userAnswer = parseInt(prompt(`${num1} x ${num2} =`))
+    //if (userAnswer === num1 * num2)
+    //correctAnswerNum++
+    //}
+    //document.write(`Correct answers ${correctAnswerNum} `)
+    //------------------------------------------------------
+
+
+    //DONE.  Є 4 марковані списки з 3 елементами в кожному. Вивести на екран.
+    /*   < ul >
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+   </ul >
+   <ul>
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+   </ul>
+   <ul>
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+   </ul>
+   <ul>
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+   </ul>
+*/
+    // for (let listNum = 0; listNum < 4; listNum++) {
+    //   document.write('<ul>')
+    //   for (let liNum = 1; liNum <= 3; liNum++) {
+    //     document.write(`<li>${liNum}</li>`)
+    //   }
+    //   document.write('</ul>')
+    // }
+
+    //------------------------------------------------------
+
+    // DONE. Маємо 4 марковані списки з 3 елементами у кожному
+    // for (let listNum = 0; listNum < 4; listNum++) {
+    //   document.write('<ul>')
+    //   for (let liNum = 1; liNum <= 3; liNum++) {
+    //     document.write(`<li>${liNum}</li>`)
+    //   }
+    //   document.write('</ul>')
+    // }
+
+    //-----------------------------------------
+    // DONE. Вводимо початкову кількість булочок, які треба продати.  Поки залишаються булочки продавати їх клієнтам
+    //ПЛАН:
+    // Повторювати, поки к-ть булочок > 0
+    // (
+    // питаємось скільки користувач хоче купити булочок
+    // якщо є така кількість,
+    // то продаємо
+    // інакше повідомляємо, що такої кількості немає.
+    // )
+
+    // let bunsNumber = parseInt(prompt('Скільки булочок треба продати?'));
+
+    // while (bunsNumber > 0) {
+    //   let userBunsNumber = parseInt(prompt(`В наявності є ${bunsNumber} булочок. Скільки булочок хочете купити?`));
+    //   if (bunsNumber >= userBunsNumber) {
+    //     bunsNumber -= userBunsNumber;
+    //     alert('Заберіть смачні булочки')
+
+    //   }
+    //   else {
+    //     alert('Вибачте, але такоі кількості немає.')
+    //   }
+    // }
+
+
+    //------------------------------------------------------
+    // DONE. Приклад*. З клавіатури вводяться два числа N i M (N<M). Вивести а екран числа
+    // N---M
+    // N+1 --- M-1
+    // N+2 --- M-2
+    // N+3 --- M-3
+    // ex: 1 -- 10
+    //     2 -- 9
+    //     3 -- 8
+    //     4 -- 7
+    //     5 -- 6
+
+    // let n = parseInt(prompt('Input number for n:'))
+    // let m = parseInt(prompt('Input number for m:'))
+
+    // while (n < m) {
+    //   document.write(`n = ${n} -- m = ${m}<br>`)
+    //   n++;
+    //   m--;
+    // }
+
+
+    // Реалізація за допомогою цикла for
+    // let n = parseInt(prompt('Input number for n:'))
+    // let m = parseInt(prompt('Input number for m:'))
+
+    // for (; n < m; n++, m--) {
+    //   document.write(`n = ${n} -- m = ${m}<br>`)
+    // }
+
+
+    //------------------------------------------------------
+    // DONE. З клавіатури вводяться поступово  числа. Знаходимо їх добуток поки не буде введено 0.
+
+    // let product = 1;
+    // let num;
+
+    // while (num !== 1) {
+    //   num = parseInt(prompt('Input number:'))
+    //   if (num === 0) {
+    //     alert('Множення на 0 дає назавжди 0')
+    //   }
+    //   product *= num;
+    //   console.log(num);
+    // }
+    // console.log(`Product of numbers is: ${product}`);
+
+    //------------------------------------------------------
+
+
+    //DONE. Приклади*. З клавіатури вводиться пароль поки не буде вірним (правильний пароль «123»).
+
+    // let password;
+    // do {
+    //   password = prompt('Enter the password');
+    // } while (password !== '123')
+
+
+    //------------------------------------------------------
+    //Приклади*. 3 рази дати можливість ввести пароль (правильний пароль «123»).
+
+    //------------------------------------------------------
+    /* DONE. Приклад*. Оленка має 0 грн. і хоче назбирати на телефон (10000 грн.). 
+    Для цього кожного разу допомагає мамі і отримує гонорар - випадкова величина від 1 до 200 грн.
+    Підрахувати скільки разів треба допомагати Оленці поки не назбирає на телефон. */
+    // let money = 0;
+
+    // do {
+    //   alert(`I saved ${money} for a mobilephone. What can I help you, mom?`)
+    //   let momsMoney = 1 + Math.floor(Math.random() * 2000)
+    //   money += momsMoney
+    // } while (money < 10000)
+    // document.write('Congratulation!')
+
+    //------------------------------------------------------
+    /* DONE.  Приклад. Оленка має М грн. (вводиться з клавіатури) і хоче назбирати на телефон (10000 грн.). Для цього кожного разу
+  допомагає мамі і отримує гонорар - випадкова величина від 1 до 200 грн. Підрахувати скільки разів треба допомагати
+  Оленці поки не назбирає на телефон.*/
+
+    // let money = parseFloat(prompt('How much money have you saved?'));
+
+    // while (money < 10000) {
+    //   alert(`I saved ${money} for a mobilephone. What can I help you, mom?`)
+    //   let momsMoney = 1 + Math.floor(Math.random() * 2000)
+    //   money += momsMoney
+    // }
+    // document.write('Congratulation!')
+
+
+
+    //------------------------------------------------------
+
+    //Дано 3 сайти, на яких користувач хоче купити по 2 товари. Але якщо гроші закнчились, то зрозумло, що покупка припиняється
+
+    //------------------------------------------
+    //Знайти найбільші 2 числа з 4-х цілих чисел.
+    // const a = parseFloat(prompt('a='))
+    // const b = parseFloat(prompt('b='))
+    // const c = parseFloat(prompt('c='))
+    // const d = parseFloat(prompt('d='))
+
+    // let m1, m2
+    // if (a > b) {
+    //   m2 = a
+    //   m1 = b
+    // } else {
+    //   m1 = a
+    //   m2 = b
+    // }
+
+    // if (c > m2) {
+    //   m1 = m2
+    //   m2 = c
+    // } else {
+    //   if (c > m1) m1 = c
+    // }
+
+    // if (d > m2) {
+    //   m1 = m2
+    //   m2 = d
+    // } else {
+    //   if (d > m1) m1 = d
+    // }
+
+    // document.write(`m1 = ${m1},  m2 = ${m2}`)
+    //-------------------------------------------------------
+
+
+    /* DONE. Приклад. Поступово вводити 10 цілих чисел і знайти їх суму.
+     Якщо буде введено некоректне число, то припинит знаходження суми. */
+
+    // let sum = 0;
+
+    // for (let i = 0; i < 10; i++) {
+    //   let num = parseInt(prompt('Enter a number:'))
+    //   console.log(sum);
+
+    //   if (!isFinite(num))
+    //     break;
+    //   sum += num;
+    // }
+    // document.write(`Sum = ${sum}`)
+
+
+
+    //==========================================
+
+    // DONE. Приклади. 3 рази дати можливість ввести пароль (правильний пароль «123»).
+
+    // let password;
+
+    // for (let i = 0; i < 3; i++) {
+    //   password = prompt('Enter the password:')
+
+    //   if (password === '123')
+    //     break;
+    // }
+    // if (password !== '123')
+    //   document.write('Access denied.')
+    // else
+    //   document.write('Welcome!')
+
+
+
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    // DONE. Приклад. Користувач кожного дня протягом 3 тижнів купляв товар за ціною, що могла змінюватись щодня. Знайти скільки всього заплатив користувач. 
+    //Якщо користувач припиняє введення (натиснув на «Відміна» під час введення), то вивести поточну суму і припинити сумування.
+
+    // let sum = 0;
+
+    // weekLoop: for (let weekNum = 1; weekNum <= 3; weekNum++) {
+    //   for (let day = 1; day <= 7; day++) {
+    //     let price = parseFloat(prompt(`Week:${weekNum} Day: ${day} Spand today:`))
+    //     if (!isFinite(price))
+    //       break weekLoop;
+    //     sum += price
+    //   }
+
+    // }
+
+    // document.write(`Total spand: ${sum}`)
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+    //DONE.  Приклад. Поаступово вітаємо 20 користувачів поки не прийде Іван
+
+    // for (let i = 0; i < 20; i++) {
+    //   let userName = prompt('Name:');
+    //   alert(`Hello ${userName}`)
+    //   if (userName === 'Ivan') {
+    //     break
+    //   }
+    // }
+
+
+
+    //====================================
+    // DONE.   Приклад. Поаступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана. Якщо зустріли Івана, то виходимо з школи і ведемо Івана у кіно.
+   
+    // classLable: for (let classNum = 1; classNum <= 3; classNum++) {
+    //   for (let pupilNum = 1; pupilNum <= 20; pupilNum++) {
+    //     const userName = prompt(`Class ${classNum}, Pupil ${pupilNum} `)
+    //     alert(`Вітаємо ${userName}`)
+    //     if (userName === 'Ivan') break classLable
+    //   }
+    // }
+    // document.write("Let's go to the cinema!")
+
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    //DONE.  Приклад. Поаступово вітаємо 5 користувачів, але Іванів не вітаємо
+
+    // for (let i = 0; i < 5; i++) {
+    //   let userName = prompt('Name:');
+    //   if (userName === 'Ivan')
+    //     continue
+    //   alert(`Hello ${userName}`)
+    // }
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    //DONE.  Поаступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана. Якщо зустріли Івана, то переходимо до наступного класу
+
+    // for (let classNum = 1; classNum <= 3; classNum++) {
+    //   for (let pupilNum = 1; pupilNum <= 20; pupilNum++) {
+    //     let userName = prompt(`Class: ${classNum} Your name is: `);
+    //     alert(`Hello ${userName}`)
+    //     if (userName === 'Ivan') break;
+    //   }
+    // }
+
+    // --> use continue with lable:
+
+    // classLable: for (let classNum = 1; classNum <= 3; classNum++) {
+    //   for (let pupilNum = 1; pupilNum <= 20; pupilNum++) {
+    //     let userName = prompt(`Class: ${classNum} Your name is: `);
+    //     alert(`Hello ${userName}`)
+    //     if (userName === 'Ivan') continue classLable;
+    //   }
+    // }
+
+
+
+  </script>
+
+</body>
+
+</html>

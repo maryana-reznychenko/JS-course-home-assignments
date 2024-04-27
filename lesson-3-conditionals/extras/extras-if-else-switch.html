@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras to lesson 5 (loops)</title>
+</head>
+
+<body>
+    <style>
+        div {
+            display: inline-block;
+            border: 2px solid salmon;
+            margin: 1em;
+        }
+    </style>
+    <script>
+        //================================================================
+
+        //Дано поточну кількість годин, хвилин, секунд (як на годиннику). Визначити яка кількість секунд буде на годиннику через N секунд
+        // const currentSecondsNum = parseInt(prompt('Поточна кількість секунд'))
+        // const n = parseInt(prompt('N = '))
+        // const newSecondsNum = (currentSecondsNum + n) % 60
+        // // document.write(`Secons = ${newSecondsNum}`)
+        // document.write(
+        //   `
+        //   <table border="2px">
+        //     <tr>
+        //       <td>Початкова кількість секунд</td>
+        //       <td>${currentSecondsNum}</td>
+        //     </tr>
+        //     <tr>
+        //       <td>Зміщення</td>
+        //       <td>${n}</td>
+        //     </tr>
+        //     <tr>
+        //       <td>Нова кількість секунд</td>
+        //       <td>${newSecondsNum}</td>
+        //     </tr>
+        //   </table>
+        //   `
+        // )
+
+        //================================================================
+        // З клавіатури вводиться номер дня тижня (від 1 до 7). Визначити який буде день тижня через N днів.
+        // newValue = (curValue - min + N) % (max - min + 1) + min
+        // newValue = (curValue - 1 + N) % (7 - 1 + 1) + 1
+        // const currentDayNum = parseInt(prompt('Current day'))
+        // const n = parseInt(prompt('n='))
+
+        // const newDayNum = ((currentDayNum - 1 + n) % 7) + 1
+
+        // document.write(`New day num = ${newDayNum}`)
+
+        //================================================================
+        // З клавіатури вводиться номер місяця. Визначити, який буде місяць через вказану кількість N місяців (1-12)
+        // newValue = (curValue - min + N) % (max - min + 1) + min
+        // newValue = (curValue - 1 + N) % (12 - 1 + 1) + 1
+        // const currentMonthNum = parseInt(prompt('Current Month'))
+        // const n = parseInt(prompt('n='))
+
+        // const newMonthNum = ((currentMonthNum - 1 + n) % 12) + 1
+
+        // document.write(`New day num = ${newMonthNum}`)
+
+        //================================================================
+        // Зашифрувати один введений англійський символ у верхньому регістрі (один з символів: A,B,…Z)  методом зміщення (шифр Цезаря).
+        // newValue = (curValue - min + N) % (max - min + 1) + min
+        // newValue = (curValue - 65 + N) % 26 + 65   //26-кількість символів
+        // const initialChar = prompt('Початковий символ')
+        // const shift = parseInt(prompt('Введіть зміщення'))
+        // const initialCharCode = initialChar.charCodeAt(0) //0- це номер символа, код якого хочемо отримати (зараз нам потрібен перший символ)
+
+        // const newCharCode = ((initialCharCode - 65 + shift) % 26) + 65
+        // const newChar = String.fromCharCode(newCharCode)
+
+        // document.write(`${initialChar}  => ${newChar}`)
+
+        //================================================================
+        // З клавіатури вводиться орендна плата за місяць. Визначити на скільки повних місяців вистачить
+        // вказаної суми грошей, а також кількість повних років.
+        // 2000 - міс., маємо 15000 - 7
+        // const rentPerMonth = parseFloat(prompt('Введіть аренду за місяць'))
+        // const userMoney = parseFloat(prompt('Скльки є грошей'))
+        // const totalMonth = Math.floor(userMoney / rentPerMonth)
+        // const totalYear = Math.floor(totalMonth / 12)
+
+        // document.write(`Total month : ${totalMonth} <br>`)
+        // document.write(`Total years : ${totalYear}`)
+        //=========================================
+        //Потрібно перевезти N учнів у автобусах з M місцями. Визначити скільки потрбіно автобусів
+        // 60 -  учнів, у автобусі 20 місць => потрібно автобусів 3
+        // 70 -  учнів, у автобусі 20 місць => потрібно автобусів 4
+        // const pupilsNumber = parseInt(prompt('Кількість учнів'))
+        // const seatsInBusNumber = parseInt(prompt('Кількість місць у автобусі'))
+
+        // const busNumber = Math.ceil(pupilsNumber / seatsInBusNumber)
+
+        // document.write(`Потрібно автобусів : ${busNumber} `)
+
+        //================================================================
+        // Цвях довжиною L см забивають в дошку. За один удар цвях заглиблюється в дерево на К мм.
+        // За скільки ударів цвях заб'ють в дошку?
+        // const nailLenth = parseFloat(prompt('Довжина цвяха у см'))
+        // const hitLength = parseFloat(prompt('Сила удару у мм'))
+
+        // const hitNumber = Math.ceil((nailLenth * 10) / hitLength) //множимо на 10 щоб перейти у міліметри
+
+        // document.write(`Потрібно ударів : ${hitNumber}`)
+
+        //================================================================
+        //Вводиться кількість місяців. Вивести кількість повних років і місяців (наприклад 27 місцяців -> 2р. 3 міс.)
+        // const totalMonth = parseInt(prompt('Введіть повну кількість місяців'))
+
+        // const yearNum = Math.floor(totalMonth / 12)
+        // const monthNum = totalMonth % 12  //цілі 12 треба відкинути
+        // document.write(
+        //   `${totalMonth} місяців  =>   ${yearNum}р.  ${monthNum} міс.`
+        // )
+
+        //================================================================
+        //Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+        // const randNum = min +  Math.floor(Math.random()*(max - min +1))       60-80  => 60 + rand(20)
+        // // Згенерувати випадкове число randNum
+        // const randNum = 1 + Math.floor(Math.random() * 5) // за попередньою формулою (min=1, max =5)
+        // // Питаємось у користувача його число userNum
+        // let userNum = parseInt(prompt('Ввдіть випадкове число від 1 до 5'))
+        // // Якщо число користувача userNum = randNum
+        // if (userNum === randNum)
+        //   //     то привітаємо користувача з виграшем
+        //   alert('Вгадав. Молодець !')
+        // //     інакше
+        // else {
+        //   //         сказати, що не вгадав
+        //   //         і знову спитати нову версію userNum числа від нього
+        //   userNum = parseInt(prompt('Шкода, ви не вгадали. Сробуйте ще раз'))
+        //   //         якщо число користувача userNum = randNum
+        //   if (userNum === randNum)
+        //     //             то привітаємо
+        //     alert('Перемога!')
+        //   //             інакше - скажемо, що не вгадав
+        //   else alert(`Ви не вгадали. Загадане число : ${randNum}`)
+        // }
+        //================================================================
+        //З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+
+        // //Вводимо кількість грошей userMoney
+        // const userMoney = parseFloat(prompt('Кількість грошей користувача'))
+        // //Вводимо ціну товару productPrice
+        // const productPrice = parseFloat(prompt('Введіть ціну товару'))
+        // //Позначаємо вартість лотереї lotteryPrice = 4
+        // const lotteryPrice = 4
+        // //Якщо userMoney < productPrice
+        // //   то : відмовляємо у покуці
+        // //   інакше :
+        // //       привітати з покупкою
+        // //       chage = userMoney - productPrice
+        // //       якщо chage>=lotteryPrice
+        // //          рекомендуємо купити лотерею
+        // if (userMoney < productPrice) alert('Вибачте, недостатньо коштів')
+        // else {
+        //   alert('Вітаємо з покупкою')
+        //   const chage = userMoney - productPrice
+        //   if (chage >= lotteryPrice) alert('Рекоменюуємо придбати лотерею')
+        // }
+
+        //================================================================
+        // З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку - 7, школярем -17, студентом- 22, працівником -65, пенсіонером).
+        // const userAge = parseInt(prompt('Введіть вік'))
+        // let userStatus
+        // if(userAge<3 || userAge > 150) userStatus = 'Дані не є коректними'
+        // else if (userAge < 7) userStatus = 'У садочку'
+        // else if (userAge < 17) userStatus = 'У школі'
+        // else if (userAge < 22) userStatus = 'У yніверситеті'
+        // else if (userAge < 65) userStatus = 'На роботі'
+        // else userStatus = 'Пенсіонер'
+
+        // document.write(userStatus)
+
+        //================================================================
+        // З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.
+        // const category = prompt('Категорія')
+        // let vehType
+        // switch (category.toUpperCase()) {
+        //   case 'A':
+        //     vehType = 'Мотоцикл'
+        //     break
+        //   case 'B':
+        //     vehType = 'Легковий'
+        //     break
+        //   case 'C':
+        //     vehType = 'Вантажівка'
+        //     break
+        //   default:
+        //     vehType = 'Невідомий транспорт'
+        //     break
+        // }
+        // document.write(vehType)
+
+        //================================================================
+        //Вводиться кількість місяців. Вивести із скільки це років
+
+        //================================================================
+        //Вводиться кількість годин, які пройшли від початку 2024 року. Яка зараз година на годиннку?
+
+        //================================================================
+        //Вводиться кількість місяців, які пройшли від початку 2024 року. Визначити який зараз місяць (1-12).
+
+        //================================================================
+        // Числа змінються у діапазоні  5-78. Користувач вводить число і зміщення. Визначити, яким буде значення після зміщення
+        // const num = parseInt(prompt('Число'))
+        // newValue = (curValue - min + N) % (max - min + 1) + min
+
+        //================================================================
+        //Вводиться два номери призових (1-3) місць, яке місце не зайняла команда?
+
+        //================================================================
+        //Вводиться кількість пасажирів. Визначити потрібну кількість автобусів (в автобулсі 20 місць)
+
+        //================================================================
+        //Вказується номер літери. Виветси цю літеру.
+
+        //================================================================
+        //================================================================
+        //================================================================
+
+        //Вводиться назва фреймворку "Vue", "React", "Express". Вивести для яких цілей вони використовуються
+        // const frameworkTitle = prompt('Введіть назву фреймворка')
+        // let frameworkType
+        // switch (frameworkTitle.toLowerCase()) {
+        //   case 'vue':
+        //   case 'react':
+        //     frameworkType = 'front'
+        //     break
+        //   case 'express':
+        //     frameworkType = 'back'
+        //     break
+        //   default:
+        //     frameworkType = 'Щось інше'
+        //     break
+        // }
+        // document.write(`${frameworkTitle} -> ${frameworkType}`)
+
+        //================================================================
+        //Міні перекладач. Вводиться одне із слів "table", "car", "bus", 'man'. Вивести переклад
+
+        //================================================================
+        //Вводиться катеорія користувача. Вивести, які дія він може виконувати
+        // admin - read, edit, add
+        // manager - read, edit
+        // user - read
+        // const userType = prompt('Введіть тип користувача')
+        // switch (userType) {
+        //   case 'admin':
+        //     alert('add')
+
+        //   case 'manager':
+        //     alert('edit')
+
+        //   case 'user':
+        //     alert('read')
+        //     break
+        //   default:
+        //     alert('Невідомо')
+        //     break
+        // }
+
+        //================================================================
+        //Вводиться назва предмета. Вивести кабінет, у якому проводиться ця дисципліна
+        // math -302
+        // history -213
+        // geography - 102
+
+        //================================================================
+        //Вводиться статус відповіді. Вивести текстове позначення категорії цього статусу
+        //https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F_HTTP
+        //1xx: Informational responses (100 – 199)
+        //2xx: Successful responses (200 – 299)
+        //3xx: Redirection messages (300 – 399)
+        //4xx: Client error responses (400 – 499)
+        //5xx: Server error responses (500 – 599)
+
+        //================================================================
+
+        // Задача. З клавіарути вводиться номер дня. Вивести на екран чи це робочий, чи віхідний день.
+        // const dayNum = parseInt(prompt('Day '))
+
+        //=======================
+        // 1.	Знайти найбільше серед 2 чисел.
+        // const num1 = parseFloat(prompt('Num1'))
+        // const num2 = parseFloat(prompt('Num2'))
+        // let max
+        // if (num1 > num2) max = num1
+        // else max = num2
+
+        // document.write(`Max = ${max}`)
+
+        //================================================================
+        // 3.	Найбільше серед 2-х замінити на 0.
+        // let num1 = parseFloat(prompt('Num1'))
+        // let num2 = parseFloat(prompt('Num2'))
+        // if (num1 === num2) document.write('Числа однакові')
+        // else {
+        //   if (num1 > num2) num1 = 0
+        //   else num2 = 0
+        //   document.write(`num1 = ${num1},  num2 = ${num2}`)
+        // }
+
+        //================================================================
+        // 4.	Дано 3 значення. Значення які більші за середнє замінити на 0.
+        // let num1 = parseFloat(prompt('Num1'))
+        // let num2 = parseFloat(prompt('Num2'))
+        // let num3 = parseFloat(prompt('Num3'))
+        // const average = (num1 + num2 + num3) / 3
+        // if (num1 > average) num1 = 0
+
+        // if (num2 > average) num2 = 0
+
+        // if (num3 > average) num3 = 0
+        // document.write(`num1 = ${num1},  num2 = ${num2},  num2 = ${num3}`)
+        //================================================================
+        // 5.	Знайти найбільше серед 3.
+        // const num1 = parseFloat(prompt('Num1'))
+        // const num2 = parseFloat(prompt('Num2'))
+        // const num3 = parseFloat(prompt('Num3'))
+
+        // // let max
+        // // if (num1 > num2) {
+        // //   if (num1 > num3) max = num1
+        // //   else max = num3
+        // // } else {
+        // //   if (num2 > num3) max = num2
+        // //   else max = num3
+        // // }
+        // let max = num1
+        // if (num2 > max) max = num2
+        // if (num3 > max) max = num3
+
+        // document.write(`Max = ${max}`)
+        //================================================================
+        // 6.	Знайти найбільше серед 4.
+        // const num1 = parseFloat(prompt('Num1'))
+        // const num2 = parseFloat(prompt('Num2'))
+        // const num3 = parseFloat(prompt('Num3'))
+        // const num4 = parseFloat(prompt('Num4'))
+        // let max = num1
+        // if (num2 > max) max = num2
+        // if (num3 > max) max = num3
+        // if (num4 > max) max = num4
+
+        // document.write(`Max = ${max}`)
+        //================================================================
+        // 7.	Найбільше серед 2 замінити на 0. Якщо однакові, то замінити обидва на 1
+
+        //================================================================
+        // 8.	Найбільше серед 3-х (різних) замінити на 0.
+
+        //================================================================
+        // 9. Задано 3 числа.	Знайти найменше серед додатних(>0).
+        // const num1 = parseFloat(prompt('Num1'))
+        // const num2 = parseFloat(prompt('Num2'))
+        // const num3 = parseFloat(prompt('Num3'))
+
+        // let min = Infinity //нескінченість
+        // if (num1 > 0 && num1 < min) min = num1
+        // if (num2 > 0 && num2 < min) min = num2
+        // if (num3 > 0 && num3 < min) min = num3
+
+        // document.write(`Min = ${min}`)
+
+        //================================================================
+        // 9. Задано 3 числа.	Знайти найбілше серед від"ємних (<0).
+        // const num1 = parseFloat(prompt('Num1'))
+        // const num2 = parseFloat(prompt('Num2'))
+        // const num3 = parseFloat(prompt('Num3'))
+
+        // let max = -Infinity //нескінченість
+        // if (num1 < 0 && num1 > max) max = num1
+        // if (num2 < 0 && num2 > max) max = num2
+        // if (num3 < 0 && num3 > max) max = num3
+        // if (isFinite(max)) document.write(`Max = ${max}`)
+        // else document.write('Немає від"ємних')
+        //================================================================
+        // 10.	Знайти найбільше парне число серед 4-х цілих чисел.  (число %2 === 0)
+
+        //================================================================
+        // 11.	Знайти найбільше серед тих які менші за середні арифметичне.
+
+        //================================================================
+        // 12.	Знайти 2 найбільших числа з 4 цілих чисел.
+
+        //================================================================
+        // 13.	Знайти 2 найменших числа.
+
+        //================================================================
+        //Передбачувач. При відктитті сторінки вивести випадковим чином  одне із наперед заданих зображень
+        //1) https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800
+        //2) https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg
+        //3) https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg
+        const randChoise = 1 + Math.floor(Math.random() * 3) //1-3
+        let imgPath
+        switch (randChoise) {
+            case 1:
+                imgPath =
+                    'https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800'
+                break
+            case 2:
+                imgPath =
+                    'https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg'
+                break
+            case 3:
+                imgPath =
+                    'https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg'
+                break
+        }
+        document.write(`<img src="${imgPath}" />`)
+
+        //================================================================
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // Знайти найбільші 2 числа з 4-х цілих чисел.
+        // let a = parseFloat(prompt('a='));
+        // let b = parseFloat(prompt('b='));
+        // let c = parseFloat(prompt('c='));
+        // let d = parseFloat(prompt('d='));
+
+        // let m1, m2; //вводимо додаткові змінні і робимо припущення, що m1 <= m2. Далі порівнюємо один за однимнові присвоєні дані з введеними
+
+        // if (a > b) {
+        //     m1 = a
+        //     m2 = b
+        // } else {
+        //     m1 = b
+        //     m2 = a
+        // }
+        // if (c > m1) {
+        //     m2 = m1
+        //     m1 = c
+        // }
+        // else {
+        //     if (c > m2) {
+        //         m2 = c
+        //     }
+        // }
+        // if (d > m1) {
+        //     m2 = m1
+        //     m1 = d
+        // } else {
+        //     if (d > m2)
+        //         m2 = d
+        // }
+        // document.write(`m1 = ${m1}, m2 = ${m2}`)
+
+
+        //================================================================
+
+
+
+    </script>
+
+</body>
+
+</html>
