@@ -19,154 +19,208 @@
     <script>
         //================================================================
 
-        //Дано поточну кількість годин, хвилин, секунд (як на годиннику). Визначити яка кількість секунд буде на годиннику через N секунд
-        // const currentSecondsNum = parseInt(prompt('Поточна кількість секунд'))
-        // const n = parseInt(prompt('N = '))
-        // const newSecondsNum = (currentSecondsNum + n) % 60
-        // // document.write(`Secons = ${newSecondsNum}`)
+        //DONE--->
+        //Дано поточну кількість годин, хвилин, секунд (як на годиннику). Тут уловка: потрібно обробити і вивести тільки ті дані, які запрошуються в задачі, тобто тіьки секунди 
+        //Визначити яка кількість секунд буде на годиннику через N секунд
+        
+        // const currentSecondsNum = parseInt(prompt('Enter current number of seconds:', '0'))
+        // const secondsBias = parseInt(prompt('How many seconds is passed?', '0'))
+
+        // let newSecondsNum = (currentSecondsNum+secondsBias)%60;
+
         // document.write(
-        //   `
-        //   <table border="2px">
-        //     <tr>
-        //       <td>Початкова кількість секунд</td>
-        //       <td>${currentSecondsNum}</td>
-        //     </tr>
-        //     <tr>
-        //       <td>Зміщення</td>
-        //       <td>${n}</td>
-        //     </tr>
-        //     <tr>
-        //       <td>Нова кількість секунд</td>
-        //       <td>${newSecondsNum}</td>
-        //     </tr>
-        //   </table>
-        //   `
+        // `
+        // <table border="2px">
+        // <tr>
+        //     <td>The first value, seconds</td>
+        //      <td>${currentSecondsNum}</td>
+        // </tr>
+        // <tr>
+        //     <td>The bias value, seconds</td>
+        //      <td>${secondsBias}</td>
+        // </tr><tr>
+        //     <td>A new clock value, seconds</td>
+        //      <td>${newSecondsNum}</td>
+        // </tr>
+        // </table>
+        // `
         // )
 
+    
         //================================================================
+
+        //DONE--->
         // З клавіатури вводиться номер дня тижня (від 1 до 7). Визначити який буде день тижня через N днів.
-        // newValue = (curValue - min + N) % (max - min + 1) + min
-        // newValue = (curValue - 1 + N) % (7 - 1 + 1) + 1
-        // const currentDayNum = parseInt(prompt('Current day'))
-        // const n = parseInt(prompt('n='))
 
-        // const newDayNum = ((currentDayNum - 1 + n) % 7) + 1
+        // const currentDayNum = parseInt(prompt('Enter the current day number (1-7)', '0'))
+        // const dayBias = parseInt(prompt("Enter the day shift, days", '0'))
 
-        // document.write(`New day num = ${newDayNum}`)
+        //     // newValue = (curValue - min + N) % (max - min + 1) + min ---> FORMULA
+        // const newDayNum = (currentDayNum -1 + dayBias)%(7-1+1)+1;
+        // document.write(`New day number = ${newDayNum}`)
 
+       
         //================================================================
+
+        //DONE--->
         // З клавіатури вводиться номер місяця. Визначити, який буде місяць через вказану кількість N місяців (1-12)
-        // newValue = (curValue - min + N) % (max - min + 1) + min
-        // newValue = (curValue - 1 + N) % (12 - 1 + 1) + 1
-        // const currentMonthNum = parseInt(prompt('Current Month'))
-        // const n = parseInt(prompt('n='))
+        //         const currentMonthNum = parseInt(prompt('Enter the current month number (1-12)', '0'))
+        //         const monthBias = parseInt(prompt("Enter the month shift", '0'))
+        
+        //         // newValue = (curValue - min + N) % (max - min + 1) + min
+        // const newMonthNum = ((currentMonthNum - 1 + monthBias) % 12)+1
 
-        // const newMonthNum = ((currentMonthNum - 1 + n) % 12) + 1
-
-        // document.write(`New day num = ${newMonthNum}`)
+        
+        //         document.write(`New month num = ${newMonthNum}`)
 
         //================================================================
+
+        //DONE --->
         // Зашифрувати один введений англійський символ у верхньому регістрі (один з символів: A,B,…Z)  методом зміщення (шифр Цезаря).
         // newValue = (curValue - min + N) % (max - min + 1) + min
-        // newValue = (curValue - 65 + N) % 26 + 65   //26-кількість символів
-        // const initialChar = prompt('Початковий символ')
-        // const shift = parseInt(prompt('Введіть зміщення'))
-        // const initialCharCode = initialChar.charCodeAt(0) //0- це номер символа, код якого хочемо отримати (зараз нам потрібен перший символ)
 
-        // const newCharCode = ((initialCharCode - 65 + shift) % 26) + 65
-        // const newChar = String.fromCharCode(newCharCode)
+// const initialChar = prompt('Enter the initial letter')
+// const shiftCesarStyle = parseInt(prompt('Enter the shift number', '0'));
 
-        // document.write(`${initialChar}  => ${newChar}`)
+// const initialCharCode = initialChar.charCodeAt(0) // --> (0) - because it is intial and only one character in this task
 
-        //================================================================
-        // З клавіатури вводиться орендна плата за місяць. Визначити на скільки повних місяців вистачить
-        // вказаної суми грошей, а також кількість повних років.
-        // 2000 - міс., маємо 15000 - 7
-        // const rentPerMonth = parseFloat(prompt('Введіть аренду за місяць'))
-        // const userMoney = parseFloat(prompt('Скльки є грошей'))
-        // const totalMonth = Math.floor(userMoney / rentPerMonth)
-        // const totalYear = Math.floor(totalMonth / 12)
+//     // newValue = (curValue - 65 + N) % 26 + 65   //"min" value is A (symbol 65); 26-total symbols in the alfabet 
+// const newCharCode = (initialCharCode - 65 + shiftCesarStyle)%26+65
+// const newChar = String.fromCharCode(newCharCode)
 
-        // document.write(`Total month : ${totalMonth} <br>`)
-        // document.write(`Total years : ${totalYear}`)
-        //=========================================
-        //Потрібно перевезти N учнів у автобусах з M місцями. Визначити скільки потрбіно автобусів
-        // 60 -  учнів, у автобусі 20 місць => потрібно автобусів 3
-        // 70 -  учнів, у автобусі 20 місць => потрібно автобусів 4
-        // const pupilsNumber = parseInt(prompt('Кількість учнів'))
-        // const seatsInBusNumber = parseInt(prompt('Кількість місць у автобусі'))
 
-        // const busNumber = Math.ceil(pupilsNumber / seatsInBusNumber)
+// document.write(`${initialChar} become  => ${newChar}`)
 
-        // document.write(`Потрібно автобусів : ${busNumber} `)
+        
 
-        //================================================================
-        // Цвях довжиною L см забивають в дошку. За один удар цвях заглиблюється в дерево на К мм.
-        // За скільки ударів цвях заб'ють в дошку?
-        // const nailLenth = parseFloat(prompt('Довжина цвяха у см'))
-        // const hitLength = parseFloat(prompt('Сила удару у мм'))
 
-        // const hitNumber = Math.ceil((nailLenth * 10) / hitLength) //множимо на 10 щоб перейти у міліметри
 
-        // document.write(`Потрібно ударів : ${hitNumber}`)
+//================================================================
 
-        //================================================================
-        //Вводиться кількість місяців. Вивести кількість повних років і місяців (наприклад 27 місцяців -> 2р. 3 міс.)
-        // const totalMonth = parseInt(prompt('Введіть повну кількість місяців'))
 
-        // const yearNum = Math.floor(totalMonth / 12)
-        // const monthNum = totalMonth % 12  //цілі 12 треба відкинути
-        // document.write(
-        //   `${totalMonth} місяців  =>   ${yearNum}р.  ${monthNum} міс.`
-        // )
+//DONE -->
+// З клавіатури вводиться орендна плата за місяць. Визначити на скільки повних місяців вистачить
+// вказаної суми грошей, а також кількість повних років.
+// 2000 - міс., маємо 15000 - 7
 
-        //================================================================
-        //Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
-        // const randNum = min +  Math.floor(Math.random()*(max - min +1))       60-80  => 60 + rand(20)
-        // // Згенерувати випадкове число randNum
-        // const randNum = 1 + Math.floor(Math.random() * 5) // за попередньою формулою (min=1, max =5)
-        // // Питаємось у користувача його число userNum
-        // let userNum = parseInt(prompt('Ввдіть випадкове число від 1 до 5'))
-        // // Якщо число користувача userNum = randNum
-        // if (userNum === randNum)
-        //   //     то привітаємо користувача з виграшем
-        //   alert('Вгадав. Молодець !')
-        // //     інакше
-        // else {
-        //   //         сказати, що не вгадав
-        //   //         і знову спитати нову версію userNum числа від нього
-        //   userNum = parseInt(prompt('Шкода, ви не вгадали. Сробуйте ще раз'))
-        //   //         якщо число користувача userNum = randNum
-        //   if (userNum === randNum)
-        //     //             то привітаємо
-        //     alert('Перемога!')
-        //   //             інакше - скажемо, що не вгадав
-        //   else alert(`Ви не вгадали. Загадане число : ${randNum}`)
-        // }
-        //================================================================
-        //З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+//     const rentPerMonth = parseFloat(prompt('Enter rent per month'))
+//     const userMoney = parseFloat(prompt('How much money do yo have?'))
+            
+//     const totalMonth = Math.floor(userMoney/rentPerMonth)
+//     const totalYear = Math.floor(totalMonth/12)
 
-        // //Вводимо кількість грошей userMoney
-        // const userMoney = parseFloat(prompt('Кількість грошей користувача'))
-        // //Вводимо ціну товару productPrice
-        // const productPrice = parseFloat(prompt('Введіть ціну товару'))
-        // //Позначаємо вартість лотереї lotteryPrice = 4
-        // const lotteryPrice = 4
-        // //Якщо userMoney < productPrice
-        // //   то : відмовляємо у покуці
-        // //   інакше :
-        // //       привітати з покупкою
-        // //       chage = userMoney - productPrice
-        // //       якщо chage>=lotteryPrice
-        // //          рекомендуємо купити лотерею
-        // if (userMoney < productPrice) alert('Вибачте, недостатньо коштів')
-        // else {
-        //   alert('Вітаємо з покупкою')
-        //   const chage = userMoney - productPrice
-        //   if (chage >= lotteryPrice) alert('Рекоменюуємо придбати лотерею')
-        // }
+// document.write(`It is ehough for total month : ${totalMonth} <br>`)
+// document.write(`It is ehough for total years : ${totalYear}`)
 
-        //================================================================
+
+//=========================================
+
+// DONE --->
+//Потрібно перевезти N учнів у автобусах з M місцями. Визначити скільки потрбіно автобусів
+// 60 -  учнів, у автобусі 20 місць => потрібно автобусів 3
+// 70 -  учнів, у автобусі 20 місць => потрібно автобусів 4
+
+// const pupilsNum = parseInt(prompt('How many pupils are goin to go?'))
+// const bussSeatsNum = parseInt(prompt('How many seats there are in one buss?'))
+
+// const bussNum = Math.ceil(pupilsNum/bussSeatsNum)
+
+// document.write(`You need ${bussNum} busses for this trip`)
+        
+
+//================================================================
+
+    //DONE --->
+   // Цвях довжиною L см забивають в дошку. За один удар цвях заглиблюється в дерево на К мм.
+    // За скільки ударів цвях заб'ють в дошку?
+    //     const nailLength =parseFloat(prompt('Enter the nail length, cm', '0'))
+    //     const hitLength = parseFloat(prompt('How deep the nail goes with one hit, mm?', '0'))
+
+    // const hitNumber = Math.ceil((nailLength*10)/hitLength)
+
+    // document.write(`The nail will be fully hit by ${hitNumber} hits.`)
+
+
+
+//================================================================
+
+//DONE --->
+//Вводиться кількість місяців. Вивести кількість повних років і місяців (наприклад 27 місцяців -> 2р. 3 міс.)
+// let monthQuntity = parseInt(prompt('Enter monts quantity:'))
+
+// let fullYearNum = Math.floor(monthQuntity/12)
+// let restOfMonth = monthQuntity % 12
+
+// document.write(`${monthQuntity} monts are equal to ${fullYearNum}year(s), and  ${restOfMonth} month(s)`)
+
+        
+
+//================================================================
+
+//DONE -->
+//Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за 2 спроби.
+//1. Generate random number -> randomNum
+//2. Ask user to guess the number -> userNum
+//3. If useNum is correct = randomNum -> congratulation
+// else -> gues one more time
+// if second time userNum === randomNum -> congratulation
+//else -> don't gues. 
+
+// const min = 1
+// const max = 5
+// const randomNum = min + Math.floor(Math.random()*(max-min+1))
+
+// let userNum = parseInt(prompt('Guess the number between 1 and 5'))
+
+// if (userNum===randomNum) 
+//     alert('Yes! You guessed!')
+
+// else { 
+// userNum= parseInt(prompt('No, try one more time'))
+
+// if (userNum === randomNum)
+//    alert('Yes! You guessed from the second try!');
+// else alert(`Nope:( The riddle number was ${randomNum}`)}
+
+
+
+//================================================================
+
+//DONE --->
+//З клавіатури вводиться ціна товару і кількість грошей. Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+
+//1. Вводимо кількість грошей userMoney
+//2. Вводимо ціну товару productPrice
+//3. Позначаємо вартість лотереї lotteryPrice = 4
+//4. Якщо userMoney < productPrice
+//   то : відмовляємо у покуці
+//   інакше :
+//       привітати з покупкою
+//       chage = userMoney - productPrice
+//       якщо chage>=lotteryPrice
+//          рекомендуємо купити лотерею
+
+// const userMoney = parseFloat(prompt('How much money do you have?'))
+// const productPrice = parseInt(prompt('How much the product cost?'))
+// const lotteryPrice =4;
+
+
+
+       
+// if (productPrice > userMoney)
+//     alert('Sorry, it is not enough money')
+
+// else {
+//      alert(`Thank you for your purchase! Welcome back again!`)
+//     let change = userMoney - productPrice;
+
+//     if (change >= lotteryPrice)
+//   alert(`Your change is ${change} hrivnas. Would you like to by a lottery for ${lotteryPrice} hrivnas?`)
+// }
+
+
+
+    //================================================================
         // З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку - 7, школярем -17, студентом- 22, працівником -65, пенсіонером).
         // const userAge = parseInt(prompt('Введіть вік'))
         // let userStatus
@@ -200,7 +254,8 @@
         // document.write(vehType)
 
         //================================================================
-        //Вводиться кількість місяців. Вивести із скільки це років
+        //Вводиться кількість місяців. Вивести скільки це років
+      
 
         //================================================================
         //Вводиться кількість годин, які пройшли від початку 2024 року. Яка зараз година на годиннку?
@@ -399,23 +454,23 @@
         //1) https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800
         //2) https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg
         //3) https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg
-        const randChoise = 1 + Math.floor(Math.random() * 3) //1-3
-        let imgPath
-        switch (randChoise) {
-            case 1:
-                imgPath =
-                    'https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800'
-                break
-            case 2:
-                imgPath =
-                    'https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg'
-                break
-            case 3:
-                imgPath =
-                    'https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg'
-                break
-        }
-        document.write(`<img src="${imgPath}" />`)
+        // const randChoise = 1 + Math.floor(Math.random() * 3) //1-3
+        // let imgPath
+        // switch (randChoise) {
+        //     case 1:
+        //         imgPath =
+        //             'https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800'
+        //         break
+        //     case 2:
+        //         imgPath =
+        //             'https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg'
+        //         break
+        //     case 3:
+        //         imgPath =
+        //             'https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg'
+        //         break
+        // }
+        // document.write(`<img src="${imgPath}" />`)
 
         //================================================================
 

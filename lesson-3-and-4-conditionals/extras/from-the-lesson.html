@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson #3</title>
+</head>
+
+<body>
+    <style>
+        img {
+            width: 200px;
+            height: auto;
+        }
+
+        div {
+            display: inline-block;
+            border: 2px solid salmon;
+            margin: 1em;
+        }
+    </style>
+    <script>
+        //================================================================
+        //DONE.
+        //     Обчислити значення виразу
+        // 𝑆_1=𝑎−𝑏∗𝑐
+        //аргументи: a,b,c
+        //результати: s1
+
+        //1. Вводимо аргументи
+        // let a = parseFloat(prompt("a=", "0"));
+        // let b = parseFloat(prompt("b=", "0"));
+        // let c = parseFloat(prompt("c=", "0"));
+
+        // //2. Обчислюємо результат
+        // let s1 = a - b * c;
+
+        // //3. Виводимо результат
+        // document.write(`S1 = ${s1}`)
+
+
+        //DONE.
+        // 𝑆_2=(𝑎−𝑏)/(2*𝑐)
+
+        // let a = parseFloat(prompt("a=", "0"));
+        // let b = parseFloat(prompt("b=", "0"));
+        // let c = parseFloat(prompt("c=", "0"));
+
+        // let s2 = (a - b) / (2 * c)
+        // document.write(`S2 = ${s2.toFixed(3)}`)
+
+
+        //DONE.
+        // 𝑆=sin⁡(𝑎−𝑏)∗cos⁡(𝑐)
+        //аргументи: a,b,c
+        //результати: s
+        //1. Вводимо аргументи
+        // let a = parseFloat(prompt('a=', '0'))
+        // let b = parseFloat(prompt('b=', '0'))
+        // let c = parseFloat(prompt('c=', '0'))
+        // // //2. Обчислюємо результат
+
+        // let s = Math.sin(a - b) * Math.cos(c);
+
+        // // //3. Виводимо результат
+        // document.write(`The answer for the problem 𝑆=sin⁡(𝑎−𝑏)∗cos⁡(𝑐) is ${s.toFixed(3)}`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        //DONE.
+        // З клавіатури вводиться рік народження учня. Визначити вік учня.
+        //аргументи: pupilBirthYear, currentYear
+        //результати: pupilAge
+        // const pupilBirthYear = parseInt(prompt('Enter the birth year', '0'))
+        // const pupilCurrentYear = new Date().getFullYear()
+
+        // const pupilAge = pupilCurrentYear - pupilBirthYear;
+
+        // document.write(`the pupil is ${pupilAge} old`)
+
+
+
+        //- - - - - - - - - -  - - - -- -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        //DONE.
+        // З клавіатури вводиться орендна плата за квартиру (за 1 місяць). Визначити скільки треба заплатити за 1 рік, за 2 роки та 10 років.
+        //аргументи: rentPerMonth
+        //результати: rentPerYear,rentPer2Year, rentPer10Year,
+        //1. Вводимо аргументи
+
+        //     const rentPerMonth = parseFloat(prompt('Enter the rent per month', '0'))
+
+        //     // //2. Обчислюємо результат
+        //     let rentPerYear = rentPerMonth*12;
+        //     let rentPer2Year = rentPerYear*2;
+        //     let rentPer10Year = rentPerYear*10;
+
+        //     // //3. Виводимо результат
+        //    document.write(`Rent per year is ${rentPerYear}, per 2 years is ${rentPer2Year}, and per 10 years is ${rentPer10Year}`)
+
+       
+        //- - - - - - - - - -  - - - -- -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // Вудкою зловили R риб по G г кожна. Обчисліть загальну вагу спійманої риби в кг.
+
+        //- - - - - - - - - -  - - - -- -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // W кг цукерок ділять порівну на М дітей. По скільки г цукерок дістанеться кожній дитині?
+
+       
+
+        //- - - - - - - - - -  - - - -- -  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // Користувач хоче клеїти шпалери на стіну. Дано розміри стіни (довжина і висота) та розмір двох вікон. Визначити, скільки м2 шпалер потрібно купити користувачу.
+
+
+
+
+        //================================================================
+
+        //DONE.
+        //Приклад. На сайті банку задають питання стосовно віку користувача. Якщо вік <18, то
+        //     повідомити про заборону доступу, інакше – привітати на сайті
+        //Крок 0. Позначення величин
+        // userAge - вік користувача
+        // minAge =18  - мінімальний вік
+        //Крок 1. Введення величин
+        // let userAge = parseInt(prompt('Enter your age'))
+        // const minAge = 18;
+
+        //Крок 2. Обчислення
+        // if (userAge >= minAge)
+        //     alert('Welcome')
+        // else alert('Access denied')
+
+
+        //--------------------------------
+        //Вводиться заробітна плата. Якщо заробітна плата більша за прожитковий мінімум (3500), то зняти податок 20%
+        // Крок 0. Позначення величин
+        // зар. плата. - salary
+        // прож. мін. - minSalary
+        // податок  - tax
+        // Крок 1. Введення величин
+        // let salary = parseFloat(prompt('Ввдіть зар. плату', '50000'))
+        // const minSalary = 3500
+        // const tax = 20
+        // // Крок 2. Обчислення
+        // if (salary > minSalary) salary = salary - (salary * tax) / 100
+        // //Крок 3 . Виведення результатів
+        // document.write(`На руки ${salary} грн.`)
+
+        //----------------------------------------
+        // //Вводиться вага вантажу. Вивести, чи можна його надіслати пакетом (до 12 кілограм)
+        // //Крок 0. Позначення величин
+        // //Вага вантажу - cargoWeight
+        // //Максимальна вага - weightLimit
+        // //Крок 1. Введення величин
+        // let cargoWeight = parseFloat(prompt('Вага вантажу'))
+        // const weightLimit = 12
+        // //Крок 2. Розв"язок заадачі
+        // // Якщо  cargoWeight < weightLimit
+        // //    тоді вивести "можна"
+        // //    інакше "Неможна"
+
+        // if (cargoWeight <= weightLimit) alert('можна')
+        // else alert('Неможна')
+
+        //----------------------------------------
+
+        //DONE.
+        //На роботу компанія приймає працівників від 32 до 45 років. З клавіатури вводиться вік претендента. З’ясувати, чи може він бути прийнятим на роботу.
+        //Крок 0. Вводимо позначення
+        //вік працівника  - workerAge
+        //мінімальний допустимий вік - minAllowedAge = 32
+        //максимальний допустимий вік - maxAllowedAge = 45
+
+        //Крок 1. Введення величин
+        // let workerAge = parseInt(prompt('Enter you age'));
+        // const minAge = 32;
+        // const maxAge = 45;
+
+        // //Крок 2. Розв"язок заадачі
+        // // if (workerAge >= minAge && workerAge <= maxAge)
+        // //     document.write('You are in')
+        // // else document.write('You are beside')
+
+        // document.write(workerAge >= minAge && workerAge <= maxAge ? 'You are in' : 'You are beside')
+
+        //----------------------------------------
+        //Якщо вік відвідувача >21, то запросимо у салон і будемо питати яке авто хоче купити (якщо тойота - то подарувати) інакше відмовити у відвідуванні
+        //Крок 0. Позначення
+        //вік відвідувача  - userAge
+        // мін. вік. - minAge = 21
+        // вибране авто для подарунку  - giftCarName = 'Toyota'
+        // вибране користувачем авто - userCarChoice
+        //Крок 1. Введення
+
+        // let userAge = parseInt(prompt('Вік користувача', '21'))
+        // const minAge = 21
+        // const giftCarName = 'Toyota'
+
+        // //Крок 2. Обчислення
+        // if (userAge > minAge) {
+        //     alert('Вітаєм! Заходьте!')
+        //     let userCarChoice = prompt('Яке авто бажаєте? ', 'BMW')
+        //     if (userCarChoice === giftCarName)
+        //         alert('Вітаємо!!! Ви виграли це авто!!!')
+        //     else alert('Приносьте гроші!!')
+        // } else alert('Ваш вік замалий!!! ')
+
+
+        //----------------------------------------
+
+        //DONE.
+        //З клавіатури вводиться к=ть балів (у 5-бальній шкалі) Вивести на екран оцінку прописом(задовільно, добре або відмінно)
+
+        // const score = parseInt(prompt('Enter youre score'))
+        // let result;
+
+        // if (score === 5)
+        //     result = 'Excelent'
+        // else if (score === 4)
+        //     result = 'Good'
+        // else if (score === 3)
+        //     result = 'Acceptable'
+        // else if (score === 2)
+        //     result = 'Unacceptable'
+        // else result = 'Faile score'
+
+        // document.write(result)
+
+        // switch (score) {
+        //     case 5: result = 'Excelent'
+        //         break;
+        //     case 4: result = 'Good'
+        //         break;
+        //     case 3: result = 'Acceptable'
+        //         break;
+        //     case 2: result = 'Unacceptable'
+        //         break;
+
+        //     default: result = 'Faile score'
+        //         break;
+        // }
+        // document.write(result)
+
+
+
+        //----------------------------------------
+
+        //DONE.
+        //з клавфіатури вводиться номер місця, яку зайняв спортсмен. Вивести яку медаль він отримає
+
+
+        // let placeNumber = parseInt(prompt('Which place a sportman got?'))
+        // let medal;
+        // let imgPath;
+
+        // switch (placeNumber) {
+        //     case 1: {
+        //         medal = "Gold",
+        //             imgPath = 'https://cdn.meteoprog.net/thumbnails/newsweather/cropr_784x441/big_602456.jpg?1643968800'
+        //     }
+        //         break;
+        //     case 2: {
+        //         medal = "Silver",
+        //             imgPath = 'https://viche.ck.ua/wp-content/uploads/2020/01/14022017110052123573.jpg'
+        //     }
+        //         break;
+        //     case 3: {
+        //         medal = "Bronze",
+        //             imgPath = 'https://www.iphones.ru/wp-content/uploads/2017/03/mb_gt.jpg'
+        //     }
+        //         break;
+
+
+        //     default: medal = 'No place - No medal'
+        //         break;
+        // }
+        // document.write(medal, `<img src="${imgPath}" />`)
+
+        //----------------------------------------
+
+        //DONE.
+        //З клавіатури вводиться колір помідора: 'red', 'yellow', 'green'.
+        //Вивести на екран у якому стані цей помідор.
+        // let tomatoColor = prompt('Enter the tomato color')
+        // let maturity;
+        // switch (tomatoColor) {
+        //     case 'red': maturity = 'The tomato is ripe'
+
+        //         break;
+        //     case 'yellow': maturity = 'The tomato is not really ripe'
+
+        //         break;
+        //     case 'green': maturity = 'The tomato is not unripe'
+
+        //         break;
+        //     default: maturity = 'Are you sure this is tomato?'
+        //         break;
+        // }
+        // document.write(maturity)
+
+
+        //----------------------------------------
+
+        //DONE.
+
+        // Приклад. З клавіатури вводиться номер дня (1-7). Вивести яким є цей день: робочий чи вихідний
+
+        // let dayNumber = parseInt(prompt('Enter the day number'))
+        // let dayStatus;
+
+        // switch (dayNumber) {
+        //     case 1:
+        //     case 2:
+        //     case 3:
+        //     case 4:
+        //     case 5: dayStatus = 'working day'
+        //         break;
+        //     case 6:
+        //     case 7: dayStatus = 'holiday'
+        //         break;
+
+        //     default: dayStatus = 'wrong day number'
+        //         break;
+        // }
+        // document.write(`The day ${dayNumber} is a ${dayStatus}`)
+        //================================================================
+
+
+
+    </script>
+
+</body>
+
+</html>
