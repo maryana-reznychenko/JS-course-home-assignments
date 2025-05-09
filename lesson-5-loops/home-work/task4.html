@@ -10,19 +10,44 @@
 
 <body>
     <h1>Задача 4</h1>
-    <p>14. Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір,
-    поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).
+    <p> Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих
+        пір,
+        поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно
+        ввести).
 
     </p>
     <script>
-        //1. Вводимо необхідні дані:
-       
+        //Lets take a random total sum between 100 - 1000
+        // let totalSum = 1000 - Math.floor(Math.random() * (1000 - 100 + 1))
+        // alert(`You need to pay ${totalSum}`)
 
-        //2. Знаходимо результат:
-        
+        // let userMoney = 0;
+        // let payed = 0;
 
-        //3. Виводимо результат:
-       
+        // do {
+        //     userMoney = parseInt(prompt('Enter your payment sum: '))
+        //     payed += userMoney
+
+        //     if (payed < totalSum)
+        //         alert(`Left to pay: ${totalSum - payed}  `)
+        // }
+        // while (payed < totalSum);
+
+
+        //- - - - - - - - - - - or with while loop - - - - - - 
+
+        let totalSum = 1000 - Math.floor(Math.random() * (1000 - 100 + 1))
+        alert(`The purchase cost: ${totalSum}`)
+
+        let userMoney = 0;
+        let payed = 0;
+
+        while (payed < totalSum) {
+            userMoney = parseFloat(prompt(`It is left to pay: ${totalSum - payed}`))
+            payed += userMoney
+        }
+        document.write('Thank you for the purchase!')
+
 
     </script>
 </body>

@@ -103,13 +103,13 @@
     //------------------------------------------------------
     //DONE.   Задача. З клавіатури 6 разів генерується ціле число в межах від 1 до 10 і кожного разу дається можливість користувачу вгадати число.
 
-// for ( let round=1; round <=6; round++ ){
-//   let randomNumber = Math.floor(Math.random() * 10) + 1;
-//   let userNum = parseInt(prompt(`Round ${round}! Guess the number between 1 to 10`))
-//   if (randomNumber === userNum)
-//   alert("You Guessed!")
-// else alert(`Wrong! The number was ${randomNumber}`)
-// }
+    // for ( let round=1; round <=6; round++ ){
+    //   let randomNumber = Math.floor(Math.random() * 10) + 1;
+    //   let userNum = parseInt(prompt(`Round ${round}! Guess the number between 1 to 10`))
+    //   if (randomNumber === userNum)
+    //   alert("You Guessed!")
+    // else alert(`Wrong! The number was ${randomNumber}`)
+    // }
 
 
 
@@ -120,9 +120,9 @@
     // for (let product = 1; product <= 7; product++) {
     // let price = parseFloat(prompt(`Enter the price for the ${product} product: `))
     // total = total + price ;
-  
+
     //} document.write(`The total costs is: ${total.toFixed(2)}`)
-    
+
 
 
 
@@ -133,8 +133,8 @@
     //   document.write(`<div>${num.toFixed(2)}</div>`)
     // }
     //------------------------------------------------------
-    
-    
+
+
     //DONE.    Задача. Вводиться прибуток магазину за 3 тижні
     //   (для кожного тижня вводиться прибуток за робочі дні 1-5). Знайти загальну суму
 
@@ -146,16 +146,16 @@
     // }  // document.write(`Total = ${total}`)
 
 
-//     let total = 0;
+    //     let total = 0;
 
-// for (let week = 1; week <= 3; week++) {
-//   for (let day = 1; day <=5; day++) {
-//    let proceeds = parseFloat(prompt(`Proceeds for week ${week}, day ${day}: `))
-//    total +=proceeds
-    
-//   } 
-// } document.write(`Total = ${total}`)
-   
+    // for (let week = 1; week <= 3; week++) {
+    //   for (let day = 1; day <=5; day++) {
+    //    let proceeds = parseFloat(prompt(`Proceeds for week ${week}, day ${day}: `))
+    //    total +=proceeds
+
+    //   } 
+    // } document.write(`Total = ${total}`)
+
 
     //-----------------------------------------------------
 
@@ -353,6 +353,21 @@
 
 
 
+    //------------------------------------------------------
+    //DONE.   Приклади*. 3 рази дати можливість ввести пароль (правильний пароль «123»).
+    //   let password;
+
+    //   for (let index = 0; index < 3; index++) {
+    //   password = prompt('Enter the password')
+
+    //   if (password === '123'){
+    //   alert("Welcome!") 
+    // break }
+    // else  alert("Access denided")
+
+    //   } 
+
+
 
     // - - - - - do-while loop - - - - - - - 
 
@@ -365,8 +380,7 @@
     // document.write("Welcome!")
 
 
-    //------------------------------------------------------
-    //Приклади*. 3 рази дати можливість ввести пароль (правильний пароль «123»).
+
 
     //------------------------------------------------------
     /* DONE. Приклад*. Оленка має 0 грн. і хоче назбирати на телефон (10000 грн.). 
@@ -400,7 +414,20 @@
 
     //------------------------------------------------------
 
-    //Дано 3 сайти, на яких користувач хоче купити по 2 товари. Але якщо гроші закнчились, то зрозумло, що покупка припиняється
+    //DONE.   Дано 3 сайти, на яких користувач хоче купити по 2 товари. Але якщо гроші закнчились, то зрозумло, що покупка припиняється
+
+    let userMoney = parseInt(prompt("How much money do you have?"))
+    let itemPrice;
+    let total = 0;
+
+    exit: for (let site = 1; site <= 3; site++) {
+      for (let item = 1; item <= 2; item++) {
+        itemPrice = parseInt(prompt(`Enter the price for the ${item} item from the ${site} site`))
+        total += itemPrice
+        if (total >= userMoney) break exit
+      }
+
+    } document.write("You have not enought money for further purchase")
 
     //------------------------------------------
 
@@ -438,7 +465,7 @@
 
 
 
-    // - - - - - break operator - - - - - - - 
+    // - - - - - break operator - - - - - - -
 
 
     /* DONE. Приклад. Поступово вводити 10 цілих чисел і знайти їх суму.
@@ -453,7 +480,7 @@
     //   if (!isFinite(num))
     //     break;
     //   sum += num;
-    // } 
+    // }
     // document.write(`Sum = ${sum}`)
 
 
@@ -477,10 +504,10 @@
 
 
 
-    // - - - - - break with labels- - - - - - - 
+    // - - - - - break with labels- - - - - - -
 
 
-    // DONE. Приклад. Користувач кожного дня протягом 3 тижнів купляв товар за ціною, що могла змінюватись щодня. Знайти скільки всього заплатив користувач. 
+    // DONE. Приклад. Користувач кожного дня протягом 3 тижнів купляв товар за ціною, що могла змінюватись щодня. Знайти скільки всього заплатив користувач.
     //Якщо користувач припиняє введення (натиснув на «Відміна» під час введення), то вивести поточну суму і припинити сумування.
 
     // let sum = 0;
@@ -497,7 +524,7 @@
 
     // document.write(`Total spand: ${sum}`)
 
-    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     //DONE.  Приклад. Поступово вітаємо 20 користувачів поки не прийде Іван
 
@@ -513,19 +540,17 @@
 
 
     //====================================
-    // DONE.   Приклад. Поступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана. 
+    // DONE.   Приклад. Поступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана.
     // Якщо зустріли Івана, то виходимо з школи і ведемо Івана у кіно.
 
     // classExit: for (let classNum = 1; classNum <= 3; classNum++) {
     //   for (let pupilNum = 1; pupilNum <= 20; pupilNum++) {
     //     let pupilName = prompt(`Class: ${classNum} Student name is: `);
     //     alert(`Welcome ${pupilName} `)
-    //     if (pupilName === "Ivan") {
-    //       document.write("Lets go to the cinema Ivan!")
-    //       break classExit
-    //     }
+    //     if (pupilName === "Ivan") break classExit
+
     //   }
-    // }
+    // } document.write("Lets go to the cinema Ivan!")
 
 
 
@@ -533,7 +558,8 @@
 
     //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    //DONE.  Поаступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана. Якщо зустріли Івана, то переходимо до наступного класу
+    //DONE.  Поаступово вітаємо учнів з 3-х класів (по 20 учнів у класі) поки не зустрінемо Івана.
+    // Якщо зустріли Івана, то переходимо до наступного класу
 
     // for (let classNum = 1; classNum <= 3; classNum++) {
     //   for (let pupilNum = 1; pupilNum <= 20; pupilNum++) {
@@ -541,6 +567,18 @@
     //     alert(`Hello ${userName}`)
     //     if (userName === 'Ivan') break;
     //   }
+    // }
+
+
+    //--->>> the same example with "continue" operator
+
+    // classLabel: for (let classNum = 1; classNum <= 3; classNum++) {
+    //   for (let pupilName = 1; pupilName <= 20; pupilName++) {
+    //     let userName = prompt(`Class: ${classNum} Your name is: `)
+    //     alert(`Hello ${userName}`)
+    //     if (userName === 'Ivan') continue classLabel;
+    //   }
+
     // }
 
 

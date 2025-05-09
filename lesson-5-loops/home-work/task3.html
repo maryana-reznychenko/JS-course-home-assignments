@@ -10,34 +10,31 @@
 
 <body>
     <h1>Задача 3</h1>
-    <p>Задача 8. Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число користувача (використати
+    <p>Користувач загадує число. Компютер задає питання поки не вгадає число користувача (використати
         confirm).
     </p>
     <script>
-        //1. Вводимо необхідні дані:
+
+        //confirm('Are you ok?') true || false
+        //compNumber
+
+        //to set a range for a random number:
+        let minNum = parseInt(prompt("Enter min number"))
+        let maxNum = parseInt(prompt("Enter max number"))
+
+        let attemptNumber = 0
+        let isGuessed;
+
+        do {
+            let compNumber = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+            attemptNumber++
+            isGuessed = confirm(`Is your number ${compNumber} ? `)
+        } while (isGuessed === false)
+
+        document.write(`Number guessed after  ${attemptNumber} attempts.`)
 
 
-        let i = 0
 
-        first: while (i < 5) {
-
-            let j = 0
-
-            while (j < 3) {
-
-                if (i == 5) continue first
-
-                document.write('Hello<br>')
-
-                j++
-
-            }
-
-            i++
-
-        }
-
-        //2. Знаходимо - виводимо результат:
 
 
 

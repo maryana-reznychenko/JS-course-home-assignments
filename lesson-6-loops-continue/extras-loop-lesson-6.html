@@ -11,68 +11,260 @@
 <body>
     <style>
         div {
-            display: inline-block;
+            /* display: inline-block; */
             border: 2px solid salmon;
             margin: 1em;
         }
     </style>
 
+    <table border="2px">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+
+
+
+
     <script>
-        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-        // DONE. Задача.11 Знайти суму 5 непарних ВИПАДКОВИХ чисел, що знаходяться між заданими користувачем числами.
 
-        // let firstUserNum = parseInt(prompt('Enter the first number: '))
-        // let secondUserNum = parseInt(prompt('Enter the second number: '))
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Вивести 4 двовимірні таблиці 5*6. Заповнити номерами місяців.
 
-        // if (firstUserNum > secondUserNum) {
-        //     let temporary = firstUserNum
-        //     firstUserNum = secondUserNum
-        //     secondUserNum = temporary
+        //    for (let tableIndex = 0; tableIndex < 4; tableIndex++) {
+        //     document.write('<table border="2px">')
+        //     for (let rowIndex = 0; rowIndex < 5; rowIndex++) {
+        //         document.write('<tr>')
+
+        //         for (let cellIndex = 0; cellIndex < 6; cellIndex++) {
+        //          let randomMonth = 1 + Math.floor(Math.random() * 12)
+        //         document.write(`<td>${randomMonth}</td>`)
+        //         }
+        //         document.write('</tr>')
+        //         }
+        //     document.write('</table>')}
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Вивести 5 маркованих списків по 3 випадкових числа (1-100)
+
+        // for (let listNum = 1; listNum <= 5; listNum++) {
+
+        //     document.write(`<p>List num ${listNum}</p>`)
+        //     document.write('<ul>')
+
+        //     for (let i = 0; i < 3; i++) {
+        //         let randomNum = 1 + Math.floor(Math.random() * 100)
+        //         document.write(`<li>${randomNum}</li>`)
+        //     }
+
+        //     document.write('</ul>')
         // }
 
-        // let oddNumber = 0,
-        //     sum = 0
-        // while (oddNumber < 5) {
-        //     let randomNum = firstUserNum + Math.floor(Math.random() * (secondUserNum - firstUserNum + 1))
 
-        //     if (randomNum % 2 !== 0) {
-        //         sum += randomNum
-        //         oddNumber++ //кількість непарних збільшуємо на одиницю
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Горизонтальну діараму з 8 рандомними значеннями 0-100
 
+        // for (let i = 0; i < 8; i++) {
+        //     let randNum = Math.floor(Math.random() * 100)
+        //     document.write(`<div style="height: 20px; width: ${randNum}%; background-color: red;">${randNum}</div>`)
+        // }
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача 1.Поступов генеруються N чисел (-100 i 100). Знайти максимальне, мінімальне та середнє значення
+
+        // const numberCount = parseInt(prompt('How many numbers you want to use?'))
+
+        // let maxNumber = -Infinity; //we need some point to start to compare from
+        // let minNumber = +Infinity;
+        // let sum = 0
+
+        // for (let i = 0; i < numberCount; i++) {
+        //     let randNum = -100 + Math.floor(Math.random() * (100 - -100 + 1))
+
+        //     if (randNum > maxNumber) maxNumber = randNum
+        //     if (randNum < minNumber) minNumber = randNum
+        //     sum += randNum
+
+        // }
+        // let average = sum / numberCount
+
+        // document.write(`Max: ${maxNumber}, min:${minNumber}, average:${average.toFixed(2)}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Поступово генерувати 100 випадкових чисел від 1 до 1000. Підрахувати яких чисел більше, парних чи непарних.
+        // let oddNum = 0, evenNum = 0
+
+        // for (let i = 0; i < 100; i++) {
+        //     let randNum = 1 + Math.floor(Math.random() * (1000))
+        //     if (randNum % 2 === 0)
+        //         evenNum++
+        //     else oddNum++
+
+        // }
+
+        // if (oddNum > evenNum) document.write(`There are more odd numbers: ${oddNum} even:${evenNum}`)
+        // else if (oddNum < evenNum) document.write(`There are more even numbers: ${evenNum} odd:${oddNum}`)
+        // else document.write("There are more even numbers")
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // DONE.   Задача 3. Вивести високосні роки у вказаному діапазоні (між початковим і кінцевим  роками).
+        //високосний рік - це  кратний 4, але не кратний 100, а також якщо він кратний 400.
+        // let startYear = parseInt(prompt('Start year:'))
+        // let endYear = parseInt(prompt('End year:'))
+
+        // for (let year = startYear; year <= endYear; year++) {
+        //     if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0)
+        //         document.write(`${year}<br>`)
+        // }
+
+
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача 4. Вивести усі трицифрові числа, де друга цифра завжди є меншою або рівню за першу,
+        //а третя є меншою або рівною за другу.    100 - 999    (531 ->   c1=5 c2=3 c3=1)   c1:1-9, c2:0-c1, c3:0-c2
+
+        // for (let c1 = 1; c1 <= 9; c1++) {
+        //     for (let c2 = 0; c2 <= c1; c2++) {
+        //         for (let c3 = 0; c3 <= c2; c3++) {
+        //             document.write(`${c1} ${c2} ${c3}<br>`)
+        //         }
         //     }
         // }
-        // document.write(`The summ of 5 odd numbers = ${sum}`)
+
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Вивести зкожного десятка (1-10, 11-20, 21-30 .... 91-100) по три випадкових парних числа.
+
+        // for (let start = 1, end = 10; start <= 91; start += 10, end += 10) {
+        //     document.write('- - - - - - - <br>')
+        //     for (let evenNum = 0; evenNum < 3;) {
+        //         let randNum = start + Math.floor(Math.random() * (end - start + 1))
+        //         if (randNum % 2 === 0) {
+        //             document.write(`${randNum} <br>`)
+        //             evenNum++
+        //         }
+        //     }
+        // }
+
+
+        //- - - - - -The same example with while-loop - - - - - - - -  - -
+
+        // for (let start = 1, end = 10; start <= 91; start += 10, end += 10) {
+        //     document.write('- - - - - - - <br>')
+
+        //     let evenNum = 0
+        //     while (evenNum < 3) {
+        //         let randNum = start + Math.floor(Math.random() * (end - start + 1))
+        //         if (randNum % 2 === 0) {
+        //             document.write(`${randNum} <br>`)
+        //             evenNum++
+        //         }
+        //     }
+        // }
+
 
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-        // DONE. Задача.11.1 Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+        // DONE.Випадковим  чином вивести у рандомних позиціях 10 зображень-смайликів
 
-        // let firstUserNum = parseInt(prompt('Enter the first number: '))
-        // let secondUserNum = parseInt(prompt('Enter the second number: '))
-        // if (firstUserNum > secondUserNum) {
-        //     let temporary = firstUserNum
-        //     firstUserNum = secondUserNum
-        //     secondUserNum = temporary
+        // for (let imgNum = 0; imgNum < 10; imgNum++) {
+        //     let left = Math.floor(Math.random() * (101))
+        //     let top = Math.floor(Math.random() * (101))
+
+        //     document.write(`<img src="./img/img1.jpg" style="position: fixed; left:${left}% ;top:${top}%;">`)
         // }
 
 
-        // let oddNumber = 0;
-        // let oddSum = 0;
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // DONE.   Задача 2.  Тільки позитивні емоції. З клавіатури вводиться М - максимальна кількість смайликів, які можна
+        // вивести. Комп’ютер випадково вибирає якесь із 4 наперед заданих. Серед них є сумний смайл.
 
-        // let startNum; // Знаходимо Перше непарне число після firstUserNum
-        // if ((firstUserNum + 1) % 2 !== 0) // firstUserNum + 1 - означає "між заданим діапазоном", тобто діапазон невключаючи заданиі користувачем числа
-        //     startNum = firstUserNum + 1
-        // else startNum = firstUserNum + 2
+        //* * * * * * * * * * * * * * * * * * * * * * * *
+        //   1)Якщо знаходимо сумний смайл – зупитини
+        //* * * * * * * * * * * * * * * * * * * * * * * *
 
+        // const MAX_SMILE_NUM = parseInt(prompt('Enter max smiles number: '))
+        // const SAD_SMILE_INDEX = 4
 
-        // for (let num = startNum; num < secondUserNum; num += 2) {
-        //     oddSum += num;
-        //     oddNumber++;
-        //     if (oddNumber === 5) break
+        // for (let i = 0; i < MAX_SMILE_NUM; i++) {
+        //     let randSmileIndex = 1 + Math.floor(Math.random() * 4)
+        //     if (randSmileIndex === SAD_SMILE_INDEX) break
+        //     document.write(`<img src="./img/img${randSmileIndex}.jpg" style="width: 50px">`)
         // }
 
-        // document.write(`Sum = ${oddSum}`)
+        //* * * * * * * * * * * * * * * * * * * * * * * *
+        //   2)Якщо знаходимо сумний смайл – пропустити
+        //* * * * * * * * * * * * * * * * * * * * * * * *
+
+        // const MAX_SMILE_NUM = parseInt(prompt('Enter max smiles number: '))
+        // const SAD_SMILE_INDEX = 4
+
+        // for (let i = 0; i < MAX_SMILE_NUM; i++) {
+        //     let randSmileIndex = 1 + Math.floor(Math.random() * 4)
+        //     if (randSmileIndex === SAD_SMILE_INDEX) continue
+        //     document.write(`<img src="./img/img${randSmileIndex}.jpg" style="width: 50px">`)
+        // }
+
+        //* * * * * * * * * * * * * * * * * * * * * * * *
+        //   3)Якщо знаходимо сумний смайл – вибрати наступний позитивний
+        //* * * * * * * * * * * * * * * * * * * * * * * *
+
+        // const MAX_SMILE_NUM = parseInt(prompt('Enter max smiles number: '))
+        // const SAD_SMILE_INDEX = 4
+
+        // for (let i = 0; i < MAX_SMILE_NUM; i++) {
+        //     let randSmileIndex = 1 + Math.floor(Math.random() * 4)
+        //     if (randSmileIndex === SAD_SMILE_INDEX)
+        //         randSmileIndex = +1
+        //     document.write(`<img src="./img/img${randSmileIndex}.jpg" style="width: 50px">`)
+        // }
+
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        // DONE. Морський бій. Компютер випадково розташовує одиночний корабель на полі розміром N * M.
+        //Маючи К снарядів, користувач намагається потопити корабель.
+
+        const rowNum = 5, columnNum = 5; shellNum = 3;
+
+        const compRow = 1 + Math.floor(Math.random() * rowNum)
+        const compColumn = 1 + Math.floor(Math.random() * columnNum)
+        document.write(`My coordinate was: Row:${compRow},  Column:${compColumn}`)
+
+
+        for (let i = 0; i < shellNum; i++) {
+            let userRow = parseInt(prompt("Row:"))
+            let userColumn = parseInt(prompt("Column"));
+
+            if (userRow === compRow && userColumn === compColumn)
+                alert('You got!')
+            else alert('You missed:(')
+        }
+        if (userRow !== compRow || userColumn !== compColumn) alert('You loose.')
+
+
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -94,23 +286,78 @@
 
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        //DONE. Вивести 5 маркованих списків по 3 випадкових числа (1-100)
+        //DONE.   Задача 11. Знайти суму 5 непарних чисел, що знаходяться МІЖ заданими користувачем числами.
 
-        for (let listNum = 1; listNum <= 5; listNum++) {
-            document.write(`List # ${listNum} `)
-            document.write('<ul>')
-            for (let i = 0; i < 3; i++) {
-                let randomNum = 1 + Math.floor(Math.random() * 100)
-                document.write(`<li>${randomNum}</li>`)
-            }
-            document.write('</ul>')
-        }
+        //firstUserNum, secondUserNum
+        //sum
+        //oddNum
+
+        // let firstUserNum = parseInt(prompt("Enter the first number"))
+        // let secondUserNum = parseInt(prompt("Enter the second number"))
+
+        // //check if first > second, change to the right position
+        // if (firstUserNum > secondUserNum) {
+        //     let temporary = firstUserNum;
+        //     firstUserNum = secondUserNum;
+        //     secondUserNum = temporary;
+        // }
+
+        // let oddNum = 0
+        // let sum = 0
+
+        // //find the first odd number efter the firstUserNum
+        // let startNum;
+        // if ((firstUserNum + 1) % 2 === 1)
+        //     startNum = firstUserNum + 1
+        // else
+        //     startNum = firstUserNum + 2
+
+
+
+        // for (let num = startNum; num < secondUserNum; num += 2) {
+        //     sum += num
+        //     oddNum++
+        //     if (oddNum === 5) break
+
+
+        // } document.write(`Sum of odd numbers is: ${sum}`)
+
+
 
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача 11.1 Знайти суму 5 непарних ВИПАДКОВИХ чисел, що знаходяться МІЖ заданими користувачем числами.
+
+        //firstUserNum, secondUserNum
+        //sum
+        //oddNumber
+        //randomNum
+
+        // let firstUserNum = parseInt(prompt("Enter the first number"))
+        // let secondUserNum = parseInt(prompt("Enter the second number"))
+
+        // //check if first > second, change to the right position
+        // if (firstUserNum > secondUserNum) {
+        //     let temporary = firstUserNum;
+        //     firstUserNum = secondUserNum;
+        //     secondUserNum = temporary;
+        // }
+
+        // let oddCount = 0
+        // let sum = 0
+
+        // while (oddCount < 5) {
+        //     let randomNum = firstUserNum + Math.floor(Math.random() * (secondUserNum - firstUserNum + 1))
+        //     if (randomNum % 2 === 1) {
+        //         sum += randomNum
+        //         document.write(`The ${oddCount + 1} odd number : ${randomNum}<br>`)
+        //         oddCount++
+        //     }
+        // } document.write(`<br> Sum of 5 random odd numbers is: ${sum}`)
 
 
-        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //minRandValue = 1, maxRandValue = 100
 
     </script>
 

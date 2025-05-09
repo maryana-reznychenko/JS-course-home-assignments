@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Задача 2</h1>
+    <p>(#5).Інвестор вклав тис. грн на 20 років під 20% річних. Визначити за допомогою циклів суму, яку він одержить
+        (без оподаткування).
+    </p>
+    <script>
+        let userMoney = parseFloat(prompt("How much money do you want to invest?"))
+        let interest = 0.2
+
+
+        let total = 0
+
+
+        // Without capitalization
+        document.write(`Your earnings by years without capitalization for ${userMoney} investment: <br><br>`)
+        for (let year = 1; year <= 20; year++) {
+            let equity = userMoney * interest
+            total += equity
+            if (year === 1)
+                document.write(`Equity for the ${year} year will be ${total.toFixed(2)}<br>`)
+            else document.write(`Equity for the ${year} years will be ${total.toFixed(2)}<br>`)
+        }
+
+
+
+        // With capitalization
+        document.write(`<br><br> Your earnings by years  with capitalization for ${userMoney} investment: <br><br>`)
+        let capital = userMoney
+
+        for (let year = 1; year <= 20; year++) {
+            let earlyInterest = capital * interest
+            capital += earlyInterest
+
+            if (year === 1)
+                document.write(`Equity for the ${year} year will be ${(capital - userMoney).toFixed(2)}<br>`)
+            else document.write(`Equity for the ${year} years will be ${(capital - userMoney).toFixed(2)}<br>`)
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

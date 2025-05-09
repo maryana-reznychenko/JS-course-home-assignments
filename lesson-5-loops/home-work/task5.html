@@ -10,20 +10,33 @@
 
 <body>
     <h1>Задача 5</h1>
-    <p>Задача 16. Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів. Знайти загальну величину прибутку
-        та
-        вивести величину прибутку протягом кожного окремого тижня.
+    <p>Користувач поступово вводить прибуток магазину за кожен день протягом N тижнів.
+        Знайти загальну величину прибутку та вивести величину прибутку протягом кожного окремого тижня.
 
     </p>
     <script>
-        //1. Вводимо необхідні дані:
-       
 
-        //2. Знаходимо результат:
-        
-        
-        //3. Виводимо результат:
-       
+        let weekNum = parseInt(prompt('How many weeks?'))
+        let weekRevenue = 0;
+        let totalRevenue = 0;
+
+        for (let week = 1; week <= weekNum; week++) {
+
+            for (let day = 1; day <= 7; day++) {
+                let dayRevenue = parseFloat(prompt(`The revenue of day ${day} for week ${week}: `))
+                weekRevenue += dayRevenue
+            }
+
+            totalRevenue += weekRevenue
+            document.write(`The Revenue for week ${week} is ${weekRevenue}<br>`)
+        }
+        document.write(`Total Revenue is: ${totalRevenue}<br>`)
+
+
+
+
+
+
     </script>
 </body>
 

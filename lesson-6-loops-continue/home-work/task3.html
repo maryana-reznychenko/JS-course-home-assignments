@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 3</h1>
+    <p>(#12) Написати програму виведення на екран кожного символу латинського алфавіту та поруч з кожним з них символу,
+        що передує йому та що слідує за ним.
+    </p>
+    <script>
+
+        let current;
+        let prev;
+        let next;
+
+        for (let i = 65; i <= 90; i++) {
+            current = String.fromCharCode(i);
+            // prev = i === 65 ? 'Z' : String.fromCharCode(i - 1);
+            // next = i === 90 ? 'A' : String.fromCharCode(i + 1);
+
+            if (i === 65)
+                prev = "Z"
+            else { prev = String.fromCharCode(i - 1) }
+
+
+            if (i === 90)
+                next = "A"
+            else {
+                next = String.fromCharCode(i + 1)
+            }
+
+            document.write(` ${prev} ${current} ${next} <br>`);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

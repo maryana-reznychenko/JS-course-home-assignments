@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Задача 5</h1>
+    <p>(#22) Є шматок тканини довжиною M метрів. Від нього послідовно відрізають шматки різної довжини. Усі дані щодо
+        використання
+        тканини вводяться до комп'ютера. Комп'ютер повинен вивести повідомлення про те, що матеріалу не вистачає, якщо
+        буде
+        потрібен шматок тканини, довжина якого перевищує довжину шматка, що залишився.
+    </p>
+    <script>
+        //let the tissue lengt will be random number between 50 and 100 
+        let totalLength = 50 + Math.floor(Math.random() * (51))
+        let oneCut = 0;
+        let cutted = 0;
+
+        while (totalLength > cutted) {
+            oneCut = parseFloat(prompt("How much you want to cut?"));
+            cutted += oneCut
+
+            if (cutted > totalLength) {
+                alert(`I have not enought tissue. I need to have ${totalLength - cutted}m more.`)
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
