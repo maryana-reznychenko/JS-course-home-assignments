@@ -247,22 +247,22 @@
         // DONE. Морський бій. Компютер випадково розташовує одиночний корабель на полі розміром N * M.
         //Маючи К снарядів, користувач намагається потопити корабель.
 
-        const rowNum = 5, columnNum = 5; shellNum = 3;
+        // const rowNum = 5, columnNum = 5; shellNum = 3;
 
-        const compRow = 1 + Math.floor(Math.random() * rowNum)
-        const compColumn = 1 + Math.floor(Math.random() * columnNum)
-        document.write(`My coordinate was: Row:${compRow},  Column:${compColumn}`)
+        // const compRow = 1 + Math.floor(Math.random() * rowNum)
+        // const compColumn = 1 + Math.floor(Math.random() * columnNum)
+        // document.write(`My coordinate was: Row:${compRow},  Column:${compColumn}`)
 
 
-        for (let i = 0; i < shellNum; i++) {
-            let userRow = parseInt(prompt("Row:"))
-            let userColumn = parseInt(prompt("Column"));
+        // for (let i = 0; i < shellNum; i++) {
+        //     let userRow = parseInt(prompt("Row:"))
+        //     let userColumn = parseInt(prompt("Column"));
 
-            if (userRow === compRow && userColumn === compColumn)
-                alert('You got!')
-            else alert('You missed:(')
-        }
-        if (userRow !== compRow || userColumn !== compColumn) alert('You loose.')
+        //     if (userRow === compRow && userColumn === compColumn)
+        //         alert('You got!')
+        //     else alert('You missed:(')
+        // }
+        // if (userRow !== compRow || userColumn !== compColumn) alert('You loose.')
 
 
 
@@ -356,8 +356,63 @@
         // } document.write(`<br> Sum of 5 random odd numbers is: ${sum}`)
 
 
+
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        //minRandValue = 1, maxRandValue = 100
+        // DONE. Ігровий автомат
+        //Випадково обираємо зображеня у трьох позиціях. 
+        //Вибір у кожній позиції вибирається як одне з чотирьох зображень.
+        //Вивести ці зображення і повідомити виграш користувача. (три перших зображення - 100грн, три других - 200, три третіх - 500,
+        // три четвертих - 1000)
+
+        //Використати цикли і switch для вибору зображення за номером
+
+        //1 - 10 . . . .10^1 . . . 30
+        //2 - 100 . . . 10^2 . . . 300
+        //3 - 1000 . .  10^3 . . . 3000
+        //4 - 10000 . . 10^4 . . . 30000
+
+
+
+        let scoreSum = 0;
+        for (let i = 0; i < 3; i++) {
+            let randomImageIndex = 1 + Math.floor(Math.random() * 4)
+
+            scoreSum = scoreSum + 10 ** randomImageIndex
+            document.write(`<img src="./img/img${randomImageIndex}.jpg" style="width: 50px">`)
+        }
+
+        let winValue;
+        switch (scoreSum) {
+            case 30: winValue = 100
+                break;
+            case 300: winValue = 200
+                break;
+            case 3000: winValue = 500
+                break;
+            case 30000: winValue = 1000
+                break;
+
+            default: winValue = 0
+                break;
+        }
+
+        document.write(`<br>Winnings - ${winValue}`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Вводимо два призові місця, які зайняла команда (від 1 до 3).
+        //Визначити, яке місце не зайняла команда.
+
+        // s = 1 + 2 + 3 = 6
+        // 6 - (1+3) = 2.
+
+        // let place1 = parseInt(prompt("The first place the team took:"))
+        // let place2 = parseInt(prompt("The second place the team took:"))
+
+        // let notReachedPlace = 6 - (place1 + place2)
+
+        // document.write(`Not took place is: ${notReachedPlace}`)
+
 
     </script>
 
