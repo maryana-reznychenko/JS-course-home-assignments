@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8. Functions && Array.</title>
+</head>
+
+<body>
+    <style>
+        div {
+            /* display: inline-block; */
+            border: 2px solid salmon;
+            margin: 1em;
+        }
+    </style>
+
+    <script>
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача. Створити функцію, яка дозволяє визначити чи вказаний місяць (1-12) є літнім (6-8)
+        // function isSummerMonth(monthNum) {
+
+        //     // if (6 <= monthNum && monthNum <= 8) return true
+        //     // else return false
+
+        //     ////the same as:
+        //     return 6 <= monthNum && monthNum <= 8
+
+        // }
+
+        // let monthNum = parseInt(prompt("Month number:"))
+        // if (isSummerMonth(monthNum))
+        //     document.write('A summer month!!!')
+        // else document.write('Not a summer')
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Створити функцію, яка дозволяє визначити чи є працівник пенсіонером(вік >=65)
+
+        // function isPensioner(age, pensionerAge = 65) {
+        //     return age >= pensionerAge
+        // }
+
+
+        // let age = parseInt(prompt("How old are you?"))
+
+        // if (isPensioner(age))
+        //     document.write('Pensioner')
+        // else document.write('Not pensioner')
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Поступово генеруються R випадкових чисел у вказаному діапазоні. Знайти суму тільки парних.
+
+        // function getRandomnumber(minNum, maxNum) {
+        //     if (minNum > maxNum) {
+        //         let t = minNum
+        //         minNum = maxNum
+        //         maxNum = t
+        //     }
+        //     return (minNum + Math.floor(Math.random() * (maxNum - minNum + 1)))
+        // }
+
+        // function getSumOfEvenNumbers(R, minNum, maxNum) {
+        //     let sum = 0
+        //     for (let i = 0; i < R; i++) {
+        //         let num = getRandomnumber(minNum, maxNum)
+        //         if (num % 2 === 0)
+        //             sum += num
+        //     }
+        //     return sum
+
+        // }
+        // //R = 30, minNum = 1, maxNum = 100
+        // let sum = getSumOfEvenNumbers(30, 1, 100)
+        // document.write(`Sum of all even numbers is ${sum}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача. Задано деякий діапазон років. Вивести на екран не більше ніх К років починаючи з першого високосного року.
+
+
+        // function isLeapYear(year) {
+        //     test.test
+        //     return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0
+        // }
+
+
+        // // get the first leap year in the range
+        // function getFirstLeapYear(minYear, maxYear) {
+        //     for (let year = minYear; year < maxYear; year++) {
+        //         if (isLeapYear(year)) return year
+        //     }
+        //     return -1 //-1 retun incorrect value - no leap year in the range, or make cath-through
+
+        // }
+
+
+        // //show K years in the range after the first leap year
+        // function printYearsFromRange(K, minYear, maxYear) {
+        //     let startLeapYear = getFirstLeapYear(minYear, maxYear)
+
+        //     if (startLeapYear === -1)
+        //         document.write("There is no leap year in this range")
+        //     else {
+        //         if (startLeapYear + K <= maxYear)
+        //             for (let y = startLeapYear; y <= startLeapYear + K; y++) {
+        //                 document.write(`${y}<br>`)
+        //             } else
+        //             document.write("The aren't so many years after the first leap year ")
+        //     }
+
+        // }
+
+        // printYearsFromRange(20, 1500, 1524)
+
+
+
+
+        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+        //
+        // - - -       A R R A Y  []     - - -
+        //
+        //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+        // let m = []
+        // m[2] = 9
+        // document.write(`0 element: ${m[0]}<br> 1 element: ${m[1]}<br> 2 element: ${m[2]}<br>`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Дано вартість товарів, які купив користувач. Знайти загальну вартість усіх товарів
+
+        // let prices = [2, 1, 4, 5, 12, 23, 45, 213, 12] //prices.length = 9
+
+        // let sum = 0;
+
+        // for (let i = 0; i < 9; i++) {
+        //     sum += prices[i]
+        // }
+        // document.write(`sum = ${sum}`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача. Дано розміри доходу магазину за кожен місяць протягом року. Знайти:
+        // 1) загальний дохід за рік (1-12)
+        // 2) загальний дохід за 1-ше півріччя (1-6)
+        // 3) загальний дохід за 2-ге півріччя (7-12)
+        // 4) загальний дохід за 2-гий квартал (4-6)
+        // 5) знайти загальний дохід за парні місяці (0,2,4,..)
+
+
+        ////             0  1  2  3  4   5   6   7    8   9   10  11
+        // let profits = [2, 1, 4, 5, 12, 23, 45, 213, 12, 23, 45, 214]
+        // let sum = 0;
+        ////1)
+        // for (let month = 0; month < profits.length; month++) {
+        //     sum += profits[month]
+        // }
+        // document.write(`Загальний дохід за рік (1-12) = ${sum}`)
+
+        ////2)
+        // for (let month = 0; month < 6; month++) {
+        //     sum += profits[month]
+        // }
+        // document.write(`Загальний дохід за 1-ше півріччя (1-6) = ${sum}`)
+
+
+        ////3)
+        // for (let month = 6; month < 12; month++) {
+        //     sum += profits[month]
+        // }
+        // document.write(`Загальний дохід за 2-ге півріччя (6-12) = ${sum}`)
+
+        ////4)
+        // for (let month = 3; month < 6; month++) {
+        //     sum += profits[month]
+        // }
+        // document.write(`Загальний дохід за 2-гий квартал (4-6) = ${sum}`)
+
+        ////5)
+        // for (let month = 0; month < 12; month++) {
+        //     if (month % 2 === 0)
+        //         sum += profits[month]
+        // }
+        // document.write(`Загальний дохід за парні місяці (0,2,4,..) = ${sum}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача.Ввести чотири загадані користувачем числа.
+
+        // const userNumbersLength = 4
+        // let usersNumbers = []
+
+        // for (let i = 1; i <= userNumbersLength; i++) {
+        //     let number = parseInt(prompt(`Enter the ${i} number `))
+        //     usersNumbers.push(number)
+        // }
+
+        // document.write(`you entered: ${usersNumbers}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. --- ФУНКЦІЯ ДЛЯ ВВЕДЕННЯ МАСИВУ (ВКАЗУЄМО КІЛЬКІСТЬ ПОТІРБНИХ ЕЛЕМЕНТІВ)
+
+
+        // - - - - функція для вводу чисел від користувача - - - -
+        // function inputUserNumbers(userNumbersLength) {
+        //     let arr = []
+        //     for (let i = 1; i <= userNumbersLength; i++) {
+        //         let number = parseInt(prompt(`Enter the ${i} number `))
+        //         arr.push(number)
+        //     }
+        //     return arr
+        // }
+
+        // let usersNumbers = inputUserNumbers(userNumbersLength)
+        // document.write(`you entered: ${usersNumbers} via function`);
+
+
+
+        // - - - - функція для генерування чисел у вказаному діапазоні - - - -
+        // function generateNumbers(userNumbersLength, minNum, maxNum) {
+        //     let arr = []
+        //     for (let i = 0; i < userNumbersLength; i++) {
+        //         let num = minNum + Math.floor(Math.random() * (maxNum - minNum + 1))
+        //         arr.push(num)
+        //     }
+        //     return arr
+        // }
+
+        // let userNumbersLength = parseInt(prompt('How many numbers you proposed?'))
+        // let minNum = parseInt(prompt('Min number = '))
+        // let maxNum = parseInt(prompt('Miax number = '))
+        // let userNumbers = generateNumbers(userNumbersLength, minNum, maxNum)
+        // document.write(userNumbers);
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // - - - PSEUDO ARGUMENTS - - - -
+
+        //DONE. Функція для знаходження суми чисел.
+
+        // function getSum() {
+        //     let sum = 0
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i]
+
+        //     }
+        //     return sum
+
+        // }
+        // document.write(`Sum = ${getSum(2, 1, 9, 4, 8, 9)}`);
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // - - - REST PARAMETERS - - - -
+
+        //DONE.  Задача. Створити функцію, яка приймає рік виходу на пенсію, та довільну
+        // кількість значень років працівників. Визначити кількість пенсіонерів.
+        //функція, яка підраховує кількість пенсіонерів
+
+        // function getPensionersNumber(pensionAge, ...workersAges) {
+        //     console.log("...workersAges");
+        //     console.log(workersAges);
+        //     console.log("arguments");
+        //     console.log(arguments);
+
+        //     let counter = 0
+        //     for (let i = 0; i < workersAges.length; i++) {
+        //         if (workersAges[i] >= pensionAge)
+        //             counter++
+
+        //     }
+        //     return counter
+        // }
+        // let pensionersCount = getPensionersNumber(65, 21, 32, 54, 80, 67, 80)
+        // document.write(`There are ${pensionersCount} pensioners`);
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // function test(a, b, c, d, ...others) {
+
+        // }
+        // test(11, 4, 3, 7, 6, 3, 2, 11, 89, 0, 7)// a=11, b=4, c=3, d=7, ...others=[all elements after]
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Дано покази температур. Підрахувати кількість показників у заданому діапазоні
+        //Знайдемо кількість показів між 10 і 15 градусів
+
+
+        // function getTemperaturesNumberInRange(minTemp, maxTemp, ...tempList) {
+
+        //     let count = 0
+        //     for (let i = 0; i < tempList.length; i++) {
+        //         if (tempList[i] >= minTemp && tempList[i] <= maxTemp)
+        //             count++
+
+        //     }
+        //     return count
+
+        // }
+        // let tempCount = getTemperaturesNumberInRange(
+        //     10,
+        //     15,
+        //     5,
+        //     21,
+        //     11,
+        //     12,
+        //     14,
+        //     16,
+        //     21,
+        //     23,
+        //     32
+        // )
+
+        // document.write(`Count = ${tempCount} times`)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Дано покази температур (довільна кількість). Розробити функцію, яка дозволить знайти середнє значення для додатних показів температури.
+
+        // function getPositiveAverage(...tempList) {
+        //     let counter = 0
+        //     let sum = 0
+
+        //     for (let i = 0; i < tempList.length; i++) {
+        //         if (tempList[i] > 0) {
+        //             sum += tempList[i]
+        //             counter++
+
+        //         }
+        //     }
+        //     return sum / counter
+        // }
+
+
+        // function inputTemperatures(tempNumber) {
+        //     let arr = []
+        //     for (let i = 1; i <= tempNumber; i++) {
+        //         let temp = parseInt(prompt(`Enter the temperature data #${i}`))
+        //         arr.push(temp)
+        //     }
+        //     return arr
+
+        // }
+
+
+        // let listOfTemperatures = inputTemperatures(3)
+        // let average = getPositiveAverage(...listOfTemperatures)
+
+        // document.write(`Average positive temperature is = ${average.toFixed(1)} degree`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        let arr = [11, 2, 90]
+
+        function f(a, b, c) {
+            return a + b + c
+        }
+
+        let s = f(...arr)
+        document.write(s);
+
+
+    </script>
+
+</body>
+
+</html>

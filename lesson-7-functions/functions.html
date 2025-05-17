@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7. Functions.</title>
+</head>
+
+<body>
+    <style>
+        div {
+            /* display: inline-block; */
+            border: 2px solid salmon;
+            margin: 1em;
+        }
+    </style>
+
+    <script>
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+        // DONE.  Задача. Знайти розмір заробітної плати
+        // (ставка (salary) + надбавка ( benefits ) - податок (tax%))
+        // let salary = parseFloat(prompt("Salary sum ="))
+        // let benefits = parseFloat(prompt("Benefits sum ="))
+        // let tax = parseFloat(prompt("Tax in % = "))
+
+        // function getSalary(salary, benefits, tax) {
+        //     return (salary + benefits) * (1 - tax / 100)
+        // }
+        // let salaryResult = getSalary(salary, benefits, tax)
+        // document.write(`Youre final salary is  ${salaryResult}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // DONE.  Задача. Знайти суму 3-х чисел
+
+        // function getSum(num1, num2, num3) {
+        //     //find result
+        //     let sum = num1 + num2 + num3
+        //     //return result
+        //     return sum
+        // }
+        // //* * * * розвязуємо задачу * * * * *
+        // let a = parseInt(prompt("The first number ="))
+        // let b = parseInt(prompt("The second number ="))
+        // let c = parseInt(prompt("The third number ="))
+        // let s = getSum(a, b, c)
+        // document.write(`The sum is  ${s}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // DONE.  Ввести імена трьох дітей і привітати їх.
+
+        // function greeting() {
+        //     let userName = prompt("Name")
+        //     document.write(`Hello ${userName}<br>`)
+        // }
+
+        // for (let i = 0; i < 3; i++) {
+        //     greeting()
+        // }
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Знайти максимальне з двох чисел
+
+        // function getMax(c1, c2) {
+        //     if (c1 > c2) return c1
+        //     else return c2
+        // }
+
+        //The better practice is return only once:
+
+        // function getMax(c1, c2) {
+        //     //спочатку знаходимо результат
+        //     let max
+        //     if (c1 > c2) max = c1
+        //     else max = c2
+
+        //     //потім один раз повертаємо цей результат
+        //     return max
+        // }
+
+        // document.write(`Max(2,8) is ${getMax(2, 8)}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Визначити середню оцінку з трьох предметів
+
+        // function getAverageScore(score1, score2, score3) {
+        //     let average = (score1 + score2 + score3) / 3
+        //     return average
+
+        // }
+
+        // let score1 = parseInt(prompt("Enter the first score"))
+        // let score2 = parseInt(prompt("Enter the second score"))
+        // let score3 = parseInt(prompt("Enter the third score"))
+
+        // document.write(`The average score is ${getAverageScore(score1, score2, score3).toFixed(1)}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача. Знайти вартість оренди авто за заданою вартістю на місяць і кількістю місяців
+
+        // //1. Discribe the function
+        // function getTotalRentalCost(costPerMonth, numberOfMonth) {
+        //     return costPerMonth * numberOfMonth
+
+        // }
+
+        // //2. * * * * The main program * * * *
+        // let costPerMonth = parseFloat(prompt("How much rent cost per month?"))
+        // let numberOfMonth = parseInt(prompt("How many month you will rent? "))
+
+        // //call the function
+        // let money = getTotalRentalCost(costPerMonth, numberOfMonth)
+
+        // document.write(`The total cost is ${money.toFixed(2)}`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE.  Задача. Знайти прибуток банку при купівлі та реалізації вказаної суми доларів.
+
+        // function getProfit(dollarBuyRate, dollarSaleRate, dollarAmount) {
+        //     return (dollarSaleRate - dollarBuyRate) * dollarAmount
+        // }
+        // let dollarSaleRate = parseFloat(prompt("Sale rate:"))
+        // let dollarBuyRate = parseFloat(prompt("Buy rate:"))
+        // let dollarAmount = parseInt(prompt("How many dollars?"))
+
+        // let marginal = getProfit(dollarBuyRate, dollarSaleRate, dollarAmount)
+
+        // document.write(`You earn ${marginal.toFixed(2)} in interest `)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE.  Задача. Знайти вартість путівки на вказану кількість днів (вказано вартість проживання, харчування, комплекса процедур)
+
+        // function getTripPrice(livingCost, foodCost, spaCost, daysNumber) {
+        //     return (livingCost + foodCost + spaCost) * daysNumber
+        // }
+        // let livingCost = parseFloat(prompt("Living costs per day:"))
+        // let foodCost = parseFloat(prompt("Meal costs per day:"))
+        // let spaCost = parseFloat(prompt("SPA costs per day:"))
+        // let daysNumber = parseInt(prompt("How many days are you going to stay?"))
+
+        // let totalCosts = getTripPrice(livingCost, foodCost, spaCost, daysNumber)
+        // document.write(`Youre total costs: ${totalCosts.toFixed(2)}  `)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задача. Задано ширину елемента у відсотках та шиниу контейнера у пікселях. Визначити ширину елемента у пікселях.
+
+        // function getElementWidthInPx(containerWidthPx, elementWidthPercent) {
+        //     return (containerWidthPx * elementWidthPercent) / 100
+
+        // }
+        // let containerWidthPx = parseFloat(prompt("Width in px:"))
+        // let elementWidthPercent = parseFloat(prompt("Element in percent ( % ):"))
+
+        // let elementWidthInPx = getElementWidthInPx(containerWidthPx, elementWidthPercent)
+        // document.write(`Element width in pixels is: ${elementWidthInPx.toFixed(0)}  `)
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE.Задано ширину контейнера у пікселях та мінімальну ширину К елементів. Визначити, чи можна розмістити елементи у одному рядку.
+
+        // function isEnoughSpace(containerWidth, elementWidth, elementsNumber) {
+
+        //     ////We don't do like this:
+        //     // if (elementWidth * elementsNumber <= containerWidth)
+        //     //     return true
+        //     // else return false
+
+        //     ////DO LIKE THIS:
+        //     return (elementWidth * elementsNumber <= containerWidth)
+        // }
+
+        // let containerWidth = parseFloat(prompt("Container width (px):"))
+        // let elementWidth = parseFloat(prompt("Element width (px):"))
+        // let elementsNumber = parseInt(prompt("How many elements?"))
+
+
+        // if (isEnoughSpace(containerWidth, elementWidth, elementsNumber))
+        //     alert('It fits!')
+        // else alert("Doesn't fit")
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Задано покази таймера відліку. Знайти колір, який треба застосувати
+        //для його виведення (100-80 – зелений, 79-30 – жовтий, 29-0 – червоний).
+
+
+        //// - - - FUNCTION DECLARATION - - -
+        // function getTimerColor(timerValue) {
+
+        //     let color
+        //     if (timerValue >= 80) color = "green"
+        //     else if (timerValue >= 30) color = "yellow"
+        //     else color = "red"
+        //     return color
+        // }
+
+
+
+        //// - - - FUNCTION EXPRESSION - - -
+        // let getTimerColor = function (timerValue) {
+
+        //     let color
+        //     if (timerValue >= 80) color = "green"
+        //     else if (timerValue >= 30) color = "yellow"
+        //     else color = "red"
+        //     return color
+        // }
+
+
+        // - - - ARROW FUNCTION - LAMBDA EXPRESSION - - -
+        let getTimerColor = (timerValue) => {
+
+            let color
+            if (timerValue >= 80) color = "green"
+            else if (timerValue >= 30) color = "yellow"
+            else color = "red"
+            return color
+        }
+
+
+
+
+        let timerData = parseInt(prompt("Enter the timer value between 100 and 0"))
+        let timerColor = getTimerColor(timerData)
+
+        document.write(`<div style="background-color:${timerColor}; width:${timerData}%">${timerData}</div>`)
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        //DONE. Двоє гравців кидають двічі разів кубик і визначається сумарна кількість балів. Визначити переможця
+
+        // function getRandomNumber(edgeNum) {
+        //     return 1 + Math.floor(Math.random() * edgeNum)
+        // }
+
+        // function getTotalPlayerScore(edgeNum) {
+        //     let score1 = getRandomNumber(edgeNum) //flip 1 time
+        //     let score2 = getRandomNumber(edgeNum) //flip 2 time
+        //     return score1 + score2
+        // }
+
+        // // - - - - main program - - -
+        // // define totall score for the first player player1Score
+        // // player1Score = player1Score1 + player1Score2
+        // // define totall score for the second player player2Score
+        // // player2Score = player2Score1 + player2Score2
+        // //define a winner
+
+        // let edgeNum = parseInt(prompt("How many edges the die has?"))
+
+        // let player1ScoreTotal = getTotalPlayerScore(edgeNum)
+        // let player2ScoreTotal = getTotalPlayerScore(edgeNum)
+
+        // alert(`Player 1: ${player1ScoreTotal}, Player 2: ${player2ScoreTotal} `)
+
+
+        // if (player1ScoreTotal > player2ScoreTotal) alert('The 1 player won!')
+        // else if (player1ScoreTotal < player2ScoreTotal) alert('The 2 player won!')
+        // else alert('Draw!')
+
+    </script>
+
+</body>
+
+</html>

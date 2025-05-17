@@ -11,10 +11,26 @@
 <body>
     <h1>Задача 3</h1>
     <p>
+        (2) Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
     </p>
     <script>
+        function getDay() {
+            return 1 + Math.floor(Math.random() * 7)
+        }
 
 
+        function getDayName(dayNumber) {
+            let message;
+            if (dayNumber === 7 || dayNumber === 6)
+                message = "weekend!"
+            else message = "working day!"
+            return message
+        }
+
+        let dayNumber = getDay()
+        let dayName = getDayName(dayNumber)
+
+        document.write(`The day ${dayNumber} of the week is the ${dayName}`)
 
     </script>
 </body>

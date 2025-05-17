@@ -11,13 +11,28 @@
 <body>
     <h1>Задача 1 </h1>
     <p>
+        (0) Створити функцію, яка за номером місяця повертає пору року, до якої відноситься цей місяць.
+
     </p>
 
     <script>
+        function getSeason(monthNum) {
+
+            let seasonTitle;
+            if (monthNum === 12 || monthNum === 1 || monthNum === 2) seasonTitle = "Winter"
+            else if (monthNum >= 3 && monthNum <= 5) seasonTitle = "Spring"
+            else if (monthNum >= 6 && monthNum <= 8) seasonTitle = "Summer"
+            else if (monthNum >= 9 && monthNum <= 11) seasonTitle = "Autumn"
+            else throw new Error("Wrong month number")
+
+            return seasonTitle
+        }
 
 
 
-
+        let monthNum = parseInt(prompt("Enter a month number:"))
+        let season = getSeason(monthNum)
+        alert(`This is ${season}!`)
 
 
 

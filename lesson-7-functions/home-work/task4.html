@@ -11,8 +11,40 @@
 <body>
     <h1>Задача 4</h1>
     <p>
+        (3) Створити окремі функції, які для 4 чисел знаходять:
+        1)суму;
+        2)добуток;
+        3)середнє арифметичне;
+        4)мінімальне значення.
+
     </p>
     <script>
+
+        function getSum(a, b, c, d) {
+            return a + b + c + d
+
+        }
+        function getProduct(a, b, c, d) {
+            return a * b * c * d
+        }
+        function getAverage(a, b, c, d) {
+            return (a + b + c + d) / 4
+
+        }
+        function getMinNumber(a, b, c, d) {
+            return Math.min(a, b, c, d)
+        }
+
+
+        let a = parseInt(prompt("The first number ="))
+        let b = parseInt(prompt("The second number ="))
+        let c = parseInt(prompt("The third number ="))
+        let d = parseInt(prompt("The fourth number ="))
+
+        document.write(`The sum of this numbers is ${getSum(a, b, c, d)}<br>`)
+        document.write(`The product of this numbers is ${getProduct(a, b, c, d)}<br>`)
+        document.write(`The average figure of this numbers is ${getAverage(a, b, c, d)}<br>`)
+        document.write(`The minimum number of this numbers is ${getMinNumber(a, b, c, d)}<br>`)
 
 
 

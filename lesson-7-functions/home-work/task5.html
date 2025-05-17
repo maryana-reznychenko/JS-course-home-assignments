@@ -11,8 +11,44 @@
 <body>
     <h1>Задача 5</h1>
     <p>
+        (4) Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів:
+        кількість парних, кількість додатних, кількість більших за 100.
     </p>
     <script>
+
+        //it work up till first return here
+        function getResults(a, b, c) {
+            let evenCount = 0;
+            let positiveCount = 0;
+            let greaterThan100Count = 0;
+
+
+            if (a % 2 === 0) evenCount++
+            if (a > 0) positiveCount++
+            if (a > 100) greaterThan100Count++
+
+
+            if (b % 2 === 0) evenCount++
+            if (b > 0) positiveCount++
+            if (b > 100) greaterThan100Count++
+
+            if (c % 2 === 0) evenCount++
+            if (c > 0) positiveCount++
+            if (c > 100) greaterThan100Count++
+
+            return evenCount
+            return positiveCount
+            return greaterThan100Count
+        }
+
+        let a = parseInt(prompt("The first number ="))
+        let b = parseInt(prompt("The second number ="))
+        let c = parseInt(prompt("The third number ="))
+
+
+        document.write(`The count of even numbers is:  ${getResults(a, b, c)}<br>`)
+        document.write(`The count of positive numbers is: ${getResults(a, b, c)}<br>`)
+        document.write(`The count of greater than 100 is: ${getResults(a, b, c)}<br>`)
 
 
     </script>
