@@ -7,18 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 7</title>
 </head>
+<style>
+    div {
+        width: 200px;
+        border: 2px solid sandybrown;
+        text-align: center;
+    }
+
+    img {
+        width: 200px;
+    }
+</style>
 
 <body>
     <h1>Задача 7</h1>
     <p>
+        (8) Створити функцію, яка виводить банер (у функцію передаються: зображення, заголовок та посилання, куди
+        переходимо при кліку на зображення (тег img повине знаходитись у середині тега a: <a> <img src=”шлях”> </a>
+    </p>
 
-        <script>
+    <script>
+        function createBanner(imgPath, title, link) {
+            document.write
+                (`<div> <a href="${link}">
+                <img src="${imgPath}">
+                <h2>${title}</h2>
+                </a>
+                 </div>`);
+
+        }
+
+        createBanner('https://st2.depositphotos.com/1001911/7684/v/600/depositphotos_76840867-stock-illustration-pointing-at-himself-emoticon.jpg',
+            "My Adds", "https://marianna-developer.netlify.app/"
+        )
 
 
 
 
-
-        </script>
+    </script>
 </body>
 
 </html>

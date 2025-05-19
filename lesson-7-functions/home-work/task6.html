@@ -11,10 +11,34 @@
 <body>
     <h1>Задача 6</h1>
     <p>
-
-
+        (5). Створити окремі функції, які переводять:
+        1. Сантиметри у дюйми;
+        2. Кілограми у фунти;
+        3. Кілометри у милі.
     </p>
     <script>
+        function getInch(cm, inch = 0.393701) {
+            return cm * inch
+
+        }
+        function getPound(kg, pound = 2.20462) {
+            return kg * pound
+
+        }
+        function getMile(km, mile = 0.621371) {
+            return km * mile
+
+        }
+
+
+        let cm = parseFloat(prompt("How many cm?"))
+        let kg = parseFloat(prompt("How many kg?"))
+        let km = parseFloat(prompt("How many km?"))
+
+        document.write(`${cm} cm is ${getInch(cm)} inches. <br>`);
+        document.write(`${kg} kg is ${getPound(kg)} pounds. <br>`);
+        document.write(`${km} km is ${getMile(km)} miles. <br>`);
+
 
     </script>
 </body>

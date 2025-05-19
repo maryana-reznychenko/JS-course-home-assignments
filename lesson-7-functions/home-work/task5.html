@@ -16,39 +16,32 @@
     </p>
     <script>
 
-        //it work up till first return here
-        function getResults(a, b, c) {
+        function getResults(...threeNumbers) {
             let evenCount = 0;
             let positiveCount = 0;
             let greaterThan100Count = 0;
 
 
-            if (a % 2 === 0) evenCount++
-            if (a > 0) positiveCount++
-            if (a > 100) greaterThan100Count++
+            for (let i = 0; i < threeNumbers.length; i++) {
+                let userNumber = threeNumbers[i] //give me the item in the i-position in the array
+
+                if (userNumber % 2 === 0 && userNumber !== 0) evenCount++
+                if (userNumber > 0) positiveCount++
+                if (userNumber > 100) greaterThan100Count++
 
 
-            if (b % 2 === 0) evenCount++
-            if (b > 0) positiveCount++
-            if (b > 100) greaterThan100Count++
 
-            if (c % 2 === 0) evenCount++
-            if (c > 0) positiveCount++
-            if (c > 100) greaterThan100Count++
-
-            return evenCount
-            return positiveCount
-            return greaterThan100Count
+            } return [evenCount, positiveCount, greaterThan100Count]
         }
 
         let a = parseInt(prompt("The first number ="))
         let b = parseInt(prompt("The second number ="))
         let c = parseInt(prompt("The third number ="))
+        let results = getResults(a, b, c)
 
-
-        document.write(`The count of even numbers is:  ${getResults(a, b, c)}<br>`)
-        document.write(`The count of positive numbers is: ${getResults(a, b, c)}<br>`)
-        document.write(`The count of greater than 100 is: ${getResults(a, b, c)}<br>`)
+        document.write(`The count of even numbers is:  ${results[0]}<br>`)
+        document.write(`The count of positive numbers is: ${results[1]}<br>`)
+        document.write(`The count of greater than 100 is: ${results[2]}<br>`)
 
 
     </script>
