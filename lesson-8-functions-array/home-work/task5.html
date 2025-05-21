@@ -11,9 +11,43 @@
 <body>
     <h1>Задача 5</h1>
     <p>
+        Задача 6. Дано послідовність цін товарів та назв (у окремих масивах).
+        Вивести на екран ті, які може собі дозволити
+        користувач (кількість грошей задається).</p>
+    <p>Приклад збереження даних:</p>
 
-    </p>
+    <table>
+        <tr>
+            <td>let productsPrices = [1000, 20, 31]</td>
+        </tr>
+        <tr>
+            <td>let productsTitles = ['cheese', 'juice', 'bread']</td>
+        </tr>
+    </table>
+    <br>
+
     <script>
+
+        function getProductsByMoney(productsPrices, productsTitles, userMoney) {
+
+            let affordableProducts = []
+            for (let i = 0; i < productsPrices.length; i++) {
+                if (userMoney >= productsPrices[i])
+                    affordableProducts.push(productsTitles[i])
+            }
+            return affordableProducts
+        }
+
+
+        let productsPrices = [1000, 20, 31]
+        let productsTitles = ['cheese', 'juice', 'bread']
+        let userMoney = parseFloat(prompt('How much money do you have?'))
+
+        let affordableProducts = getProductsByMoney(productsPrices, productsTitles, userMoney)
+
+        document.write(`For your ${userMoney} you can buy something from: ${affordableProducts.join(', ')}`);
+
+
 
 
 

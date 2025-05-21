@@ -11,9 +11,62 @@
 <body>
     <h1>Задача 4</h1>
     <p>
-
-    </p>
+        (5). Дано послідовність оцінок учня. Підрахувати кількість:</p>
+    <ul>
+        <li>1. двійок</li>
+        <li>2. кількість хороших оцінок (добре, відмінно);</li>
+        <li>3. кількість оцінок, які нижче середнього.</li>
+    </ul>
     <script>
+        //-> 1), 2)
+        function getMarksRanges(studentMarks) {
+            let nonAchivedMarks = 0
+            let goodMarks = 0
+
+            for (let i = 0; i < studentMarks.length; i++) {
+                if (studentMarks[i] === 2)
+                    nonAchivedMarks++
+                if (studentMarks[i] >= 4)
+                    goodMarks++
+
+            }
+            return [nonAchivedMarks, goodMarks]
+        }
+
+        //-> get average value
+        function getAverageMark(studentMarks) {
+            let total = 0
+            for (let i = 0; i < studentMarks.length; i++) {
+                total += studentMarks[i];
+            }
+            return total / studentMarks.length
+        }
+
+        // -> 3) 
+        function getLowerThanAverage(studentMarks) {
+
+            let average = getAverageMark(studentMarks)
+            let count = 0
+            for (let i = 0; i < studentMarks.length; i++) {
+                if (studentMarks[i] < average)
+                    count++
+            }
+            return count
+
+        }
+
+
+
+
+        let studentMarks = [2, 5, 4, 3, 5, 5, 4, 3, 2]
+        let results = getMarksRanges(studentMarks)
+        let lowerThanAverageMarks = getLowerThanAverage(studentMarks)
+
+
+        document.write(`All marks in the array: ${studentMarks}<br><br>`);
+        document.write(`1. Non achived marks: ${results[0]}<br>`);
+        document.write(`2. Good marks: ${results[1]}<br>`);
+        document.write(`3. Lower than everage marks: ${lowerThanAverageMarks}. (Average is: ${getAverageMark(studentMarks).toFixed(1)})<br>`);
 
 
 

@@ -11,13 +11,70 @@
 <body>
     <h1>Задача 1 </h1>
     <p>
-
+        (1) Дано масив, який містить оцінки з К предметів. Знайти середній бал і з’ясувати до якої категорії він
+        відноситься (відмінник, двійочник (має хоча би одну двійку), хорошист (оцінки добре і відмінно),
+        трійочник(є хоча би одна трійка)).
 
     </p>
 
     <script>
+        // -> Find the average mark:
+        function getAverageMark(allMarks) {
+            let total = 0
+            for (let i = 0; i < allMarks.length; i++) {
+                total += allMarks[i];
+            }
+            return total / allMarks.length
+        }
 
 
+
+        // -> Find min mark in the arr: /alternative to Math.min:/ Метод баби Галі
+        function getMinMark(marksList) {
+            let min = marksList[0]
+            for (let i = 0; i < marksList.length; i++) {
+                if (marksList[i] < min) min = marksList[i]
+            }
+            return min
+        }
+
+
+        // -> Take min mark and return the category based on it:
+        function getCategoryByMinScore(minMark) {
+            let category
+            switch (minMark) {
+                case 5: category = "Excelent"
+                    break;
+                case 4: category = "Good"
+                    break;
+                case 3: category = "Middle"
+                    break;
+
+                default: category = "Non-achiver"
+                    break;
+            }
+            return category
+
+        }
+
+        // -> Find student Category based on min mark:
+        function getStudentCategory(marksList) {
+            const minMark = getMinMark(marksList)
+            let category = getCategoryByMinScore(minMark)
+            return category
+
+        }
+
+
+
+        //- - - - - - - - - - - - - - - - - - - - - 
+        let allMarks = [4, 5, 5, 4, 5, 5]
+
+        let averageMark = getAverageMark(allMarks)
+        let studentCategory = getStudentCategory(allMarks)
+
+
+        document.write(`Average mark is ${averageMark.toFixed(1)}. ${studentCategory}`);
 
     </script>
 </body>

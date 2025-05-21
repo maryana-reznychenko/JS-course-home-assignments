@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 8</title>
+</head>
+
+
+<body>
+    <h3>Example:</h3>
+    <table border="2px">
+        <tr>
+            <td>222</td>
+            <td>222</td>
+            <td>222</td>
+            <td>222</td>
+        </tr>
+    </table>
+    <h1>Задача 8</h1>
+    <p>
+        (6). Створити функцію, яка створює таблицю з вказаною кількістю рядків і стовпців (таблиця заповнюється заданим
+        фіксованим повідомленням).
+    </p>
+
+    <script>
+        function createTable(rowsNumber, columnsNumber, message) {
+            document.write('<table border="2px">');
+            for (let r = 0; r < rowsNumber; r++) {
+                document.write('<tr>');
+
+                for (let c = 0; c < columnsNumber; c++) {
+                    document.write(`<td>${message}</td>`);
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+
+
+        }
+
+        createTable(3, 5, "Hello")
+
+
+    </script>
+</body>
+
+</html>

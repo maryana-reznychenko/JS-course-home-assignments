@@ -11,3 +11,7 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+hr {
+  margin-top: 2em;
+}

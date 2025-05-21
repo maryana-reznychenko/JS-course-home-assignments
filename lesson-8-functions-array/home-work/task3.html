@@ -10,12 +10,35 @@
 
 <body>
     <h1>Задача 3</h1>
-    <p>
+    <p>(3). Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я «Іван».
+    </p>
 
-        <script>
+    <script>
+
+        function getStudentName(studentList) {
+            let searchName = 0
+            for (let i = 0; i < studentList.length; i++) {
+                if (studentList[i] === "Ivan")
+                    searchName++
+            }
+            return searchName
+        }
+
+        let studentList = ["Ivan", "Jan", "Antonio", "Ingvar", "Ivan", "Ivan", "Erik"]
+        document.write(`<h3>By using a function + array:</h3> There are ${getStudentName(studentList)} students with name Ivan in this list. <br>`);
 
 
-        </script>
+
+        // - - - -  find it without function: - - - -
+
+        let searchName = 0
+        for (let i = 0; i < studentList.length; i++) {
+            if (studentList[i] === "Ivan")
+                searchName++
+        }
+        document.write(`<h3>By using a for-loop + array:</h3> There are ${searchName} students with name Ivan in this list.`);
+
+    </script>
 </body>
 
 </html>

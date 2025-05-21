@@ -11,10 +11,91 @@
 <body>
     <h1>Задача 6</h1>
     <p>
-
-
+        (7). Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+    <ol>
+        <li>за весь рік;</li>
+        <li>у першій половині року;</li>
+        <li>у другій половині року;</li>
+        <li>за літо;</li>
+        <li>за ІІ квартал;</li>
+        <li>за парні місяці (з парними номерами);</li>
+        <li>за місяці, які є початковими у сезоні (весна, літо, осінь, зима).</li>
+    </ol>
     </p>
     <script>
+        // -> 1. 
+        function getTotalPayments(monthPayments) {
+            let total = 0
+            for (let i = 0; i < monthPayments.length; i++) {
+                total += monthPayments[i]
+            }
+            return total
+        }
+        // -> 2. 
+        function getFirstHalfYear(monthPayments) {
+            let total = 0
+            for (let i = 0; i < 6; i++) {
+                total += monthPayments[i]
+            }
+            return total
+        }
+
+        // -> 3. 
+        function getSecondtHalfYear(monthPayments) {
+            let total = 0
+            for (let i = 6; i < monthPayments.length; i++) {
+                total += monthPayments[i]
+            }
+            return total
+        }
+        // -> 4. 
+        function getSummerPayments(monthPayments) {
+            let total = 0
+            for (let i = 6; i < monthPayments.length; i++) {
+                total += monthPayments[i]
+            }
+            return total
+        }
+        // -> 5. 
+        function getSecondQuarterPayments(monthPayments) {
+            let total = 0
+            for (let i = 3; i < 6; i++) {
+                total += monthPayments[i]
+            }
+            return total
+        }
+
+        // -> 6. 
+        function getEvenMonthPayments(monthPayments) {
+            let total = 0
+            for (let i = 0; i < monthPayments.length; i++) {
+                if ((i + 1) % 2 === 0)
+                    total += monthPayments[i]
+            }
+            return total
+        }
+        // -> 7. 
+        function getBegginingOfSeasonPayments(monthPayments) {
+            let total = 0
+            let seasonBeginningIndex = [2, 5, 8, 11]
+            for (let i = 0; i < seasonBeginningIndex.length; i++) {
+                total += monthPayments[seasonBeginningIndex[i]]
+
+            }
+            return total
+        }
+
+
+        let monthPayments = [100, 1, 250, 1, 4500, 1, 5000, 1, 100, 1, 1100, 1]
+
+        document.write(`The payments for the year by month: ${monthPayments.join(', ')} <br><br>`);
+        document.write(`1. Total year payment: ${getTotalPayments(monthPayments)}<br>`);
+        document.write(`2. The first half year payment: ${getFirstHalfYear(monthPayments)}<br>`);
+        document.write(`3. The second half year payment: ${getSecondtHalfYear(monthPayments)}<br>`);
+        document.write(`4. The summer payment: ${getSummerPayments(monthPayments)}<br>`);
+        document.write(`5. The second quarter payment: ${getSecondQuarterPayments(monthPayments)}<br>`);
+        document.write(`6. The event monthes payment: ${getEvenMonthPayments(monthPayments)}<br>`);
+        document.write(`7. The first month of each season payment: ${getBegginingOfSeasonPayments(monthPayments)}<br>`);
 
     </script>
 </body>

@@ -12,9 +12,80 @@
 
     <h1>Задача 2</h1>
     <p>
+        (2). Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:</p>
 
-    </p>
+    <ul>
+        <li>1. номери днів, протягом яких кількість відвідувачів була меншою за 20;</li>
+        <li>2. номери днів, коли кількість відвідувачів була мінімальною;</li>
+        <li>3. номери днів, коли кількість відвідувачів була максимальною;</li>
+        <li>4. загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.</li>
+    </ul>
     <script>
+
+        //1. 
+        function getLessThen20(clientsQuantity) {
+            let lessThen20clients = []
+            for (let i = 0; i < clientsQuantity.length; i++) {
+                if (clientsQuantity[i] < 20) lessThen20clients.push(i + 1)
+            }
+            return lessThen20clients
+        }
+
+        //2. 
+        function getMinClientDayNumber(clientsQuantity) {
+            let minClientQuantity = Math.min(...clientsQuantity)
+            for (let i = 0; i < clientsQuantity.length; i++) {
+                if (clientsQuantity[i] === minClientQuantity)
+                    return i + 1
+            }
+
+
+        }
+
+        //3.
+        function getMaxClientDayNumber(clientsQuantity) {
+            let maxClientQuantity = Math.max(...clientsQuantity)
+            for (let i = 0; i < clientsQuantity.length; i++) {
+                if (clientsQuantity[i] === maxClientQuantity)
+                    return i + 1
+            }
+
+        }
+
+
+        //4. 
+        function getClientsDuringWorkDays(clientsQuantity) {
+            let allClientsDuringWorkDays = 0
+            for (let w = 0; w < 5; w++) {
+                allClientsDuringWorkDays += clientsQuantity[w]
+            }
+            return allClientsDuringWorkDays
+        }
+
+        function getClientsDuringWeekend(clientsQuantity) {
+            let allClientsDuringWeekend = 0
+            for (let w = 5; w < 7; w++) {
+                allClientsDuringWeekend += clientsQuantity[w]
+            }
+            return allClientsDuringWeekend
+        }
+
+        //- - - - - - - - - - - - - - - - - - - - - - - - - - -  -
+        let clientsQuantity = []
+
+        for (let i = 1; i <= 7; i++) {
+            let clientNumPerDay = parseInt(prompt(`How many client did you have the day ${i} ?`))
+            clientsQuantity.push(clientNumPerDay)
+        }
+
+        document.write(`You entered: ${clientsQuantity} <br><br>`);
+        document.write(`1. Days, when there were less than 20 clients: ${getLessThen20(clientsQuantity)}<br><br>`);
+        document.write(`2. Minimum visitors were day: ${getMinClientDayNumber(clientsQuantity)}<br><br>`);
+        document.write(`3. Maximum visitors were day: ${getMaxClientDayNumber(clientsQuantity)}<br><br>`);
+        document.write(`4. Total clients during the working days: ${getClientsDuringWorkDays(clientsQuantity)}<br><br>`);
+        document.write(`&& Total clients during the weekend: ${getClientsDuringWeekend(clientsQuantity)}<br><br>`);
+
+
 
 
     </script>
